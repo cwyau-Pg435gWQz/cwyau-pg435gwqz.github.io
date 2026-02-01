@@ -1,0 +1,33 @@
+---
+permalink: /contact/
+search: false
+title: ""
+excerpt: "中心地址"
+header:
+  overlay_color: "#333"
+---
+
+# 培康物理治療 (Rehab Motion)
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1644.36811033896!2d114.17302840139907!3d22.297620014439012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ee0572c62b%3A0xc1e1c0485b103c45!2sPodium%20Plaza!5e0!3m2!1sen!2shk!4v1769930579599!5m2!1sen!2shk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+#### 查詢或預約 / Inquiry or Appointment
+
+<i class="fab fa-whatsapp"></i>
+<i class="fa-solid fa-phone"></i>
++852 6357 8708
+
+#### 地址 / Address
+
+尖沙咀河內道5-7 號普基商業中心 10 樓 1001 室
+<br>
+Rm 1001, 10/F, Podium Plaza, Tsim Sha Tsui
+
+#### 地鐵 / MTR <img src="/assets/images/logo/mtr.png" width=25px>
+
+尖沙咀站 N1/N2 出口 (N1 出口設有升降機)
+<br>
+Tsim Sha Tsui Station Exit N1/N2 (Elevator available at Exit N1)
+
+
+

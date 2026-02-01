@@ -1,0 +1,108 @@
+{% if include.id %}
+  {% assign gcards = page[include.id] %}
+{% else %}
+  {% assign gcards = page.gcards %}
+{% endif %}
+
+{% if include.gallery_n_thumbnails %}
+  {% assign gallery_n_thumbnails = include.gallery_n_thumbnails %}
+{% else %}
+  {% assign gallery_n_thumbnails = 5 %}
+{% endif %}
+
+{% if include.gallery_n_columns %}
+  {% assign gallery_n_columns = include.gallery_n_columns %}
+{% else %}
+  {% assign gallery_n_columns = 3 %}
+{% endif %}
+
+{% for gcard in gcards %}
+  {% assign gcard_id = 'gcard-' | append: forloop.index %}
+  <div class="gcard-container" id="{{ gcard_id }}">
+    <div class="gcard">
+      <div class="gcard-row">
+        {% if gcard.img %}
+          <div class="gcard-column">
+            <div class="gcard-image-container">
+              <img src="{{ gcard.img | relative_url }}"
+                {% if gcard.alt %}alt="{{ gcard.alt | escape_once }}"{% endif %}>
+            </div>
+          </div>
+        {% endif %}
+        <div class="gcard-column">
+          {% if gcard.title %}
+            <h2 class="gcard-title">{{ gcard.title | markdownify }}</h2>
+          {% endif %}
+          {% if gcard.descr %}
+            <div class="gcard-description">{{ gcard.descr | markdownify }}</div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="gcard-additional-description">
+        {% if gcard.gallery %}
+          <div class="gcard-gallery-thumbnail-container">
+            {% for item in gcard.gallery %}
+              <div class="gcard-gallery-thumbnail">
+                {% if item.img %}
+                  <img src="{{ item.img | relative_url }}"
+                    {% if item.alt %}alt="{{ item.alt | escape_once }}"{% endif %}>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if gcard.gallery %}
+      {% assign overlay_id = 'gcard-gallery-overlay-' | append: forloop.index %}
+      {% assign close_btn_id = 'gcard-gallery-close-btn-' | append: forloop.index %}
+      <div class="gcard-gallery-overlay" id="{{ overlay_id }}">
+        <button class="gcard-gallery-close-btn" id="{{ close_btn_id }}">&times;</button>
+        <div class="gcard-gallery-overlay-content">
+          <div class="gcard-gallery-grid">
+            {% for item in gcard.gallery %}
+              <div class="gcard-gallery-grid-item">
+                {% if item.img %}
+                  <img src="{{ item.img | relative_url }}"
+                    {% if item.alt %}alt="{{ item.alt | escape_once }}"{% endif %}>
+                {% endif %}
+                {% if item.title %}
+                  <h2 class="gcard-gallery-title">{{ item.title | markdownify }}</h2>
+                {% endif %}
+                {% if item.descr %}
+                  <div class="gcard-gallery-description">{{ item.descr | markdownify }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <script>
+    {% assign overlay = 'overlay' | append: forloop.index %}
+    let {{ overlay }} = document.getElementById('{{ overlay_id }}');
+    document
+      .getElementById('{{ gcard_id }}')
+      .querySelectorAll('.gcard-gallery-thumbnail')
+      .forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+          {{ overlay }}.classList.add('active');
+        });
+      });
+    if ({{ overlay }}) {
+      document
+        .getElementById('{{ close_btn_id }}')
+        .addEventListener('click', () => {
+          {{ overlay }}.classList.remove('active');
+        });
+    }
+    if ({{ overlay }}) {
+      {{ overlay }}.addEventListener('click', (e) => {
+        if (e.target === {{ overlay }}) {
+          {{ overlay }}.classList.remove('active');
+        }
+      });
+    }
+  </script>
+{% endfor %}
