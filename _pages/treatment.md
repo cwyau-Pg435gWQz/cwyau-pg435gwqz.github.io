@@ -257,14 +257,4 @@ gcards:
             url: /assets/images/treatment/pillow_2.jpg
             alt: 物理治療 | 枕頭建議
 ---
-{% include gcards id="gcards" n_cols=1 %}
-
-
-<!-- <aside class="sidebar__right sticky">
-<nav class="toc" markdown="1">
-<header><h4 class="nav__title"><i class="fas fa-{{ include.icon | default: 'file-alt' }}"></i> {{ include.title | default: site.data.ui-text[site.locale].toc_label }}</h4></header>
-<ul class="toc__menu">
-<li><a href="#group-by-array">Group by array</a></li>
-</ul>
-</nav>
-</aside> -->
+{% include gcards id="gcards" n_cols=1 back_to_top=true %}
