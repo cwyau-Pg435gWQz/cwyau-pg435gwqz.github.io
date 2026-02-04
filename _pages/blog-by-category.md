@@ -3,6 +3,7 @@ permalink: /categories/
 search: false
 classes: wide
 layout: categories
+author_profile: true
 title:
 tagline: "健康資訊"
 header:

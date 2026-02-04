@@ -3,6 +3,7 @@ permalink: /tags/
 search: false
 classes: wide
 layout: tags
+author_profile: true
 title:
 tagline: "健康資訊"
 header:
