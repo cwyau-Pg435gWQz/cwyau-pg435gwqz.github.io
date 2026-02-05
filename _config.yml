@@ -31,7 +31,7 @@ head_scripts:
   - https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js
   - /assets/js/thumbgrid.js
 
-teaser: /assets/images/teaser_related.jpeg
+# teaser: /assets/images/teaser_related.jpeg
 words_per_minute: 250 # typically 250 for english, 300 for chinese
 
 # # Disable Feed Icons
