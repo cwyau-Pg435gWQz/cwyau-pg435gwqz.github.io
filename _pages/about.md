@@ -1,11 +1,14 @@
 ---
 permalink: /about/
 search: false
-title: ""
-tagline: "簡介"
 header:
   overlay_color: "#333"
   right_image: "/assets/images/banner/banner_about.png"
+  title: "簡介"
+json_ld_list:
+  - json_ld/person_cwyau_base.json
+title: "簡介 | 理大手法治療碩士、針灸及正骨專家 | 痛症紓解"
+description: "邱忠榮物理治療師秉持『手心合一』理念，具備理大手法治療碩士、針灸文憑及龍氏正骨等多項專業資歷，曾任職於理大康復診所，擅長處理骨科痛症及跑步傷患。曾受邀擔任港台《做個健康快活人》嘉賓，憑藉臨床經驗與真誠關懷，助您全方位復原。我們位於尖沙咀地鐵站旁，歡迎透過電話或 WhatsApp +852 6357 8708 預約諮詢。"
 ---
 
 ## 邱忠榮先生
@@ -39,7 +42,7 @@ Mark embodies the core philosophy of "Unity of Hands and Heart":
 Mark is committed to evidence-based medicine, integrating personalized treatment plans to address individual patient needs.
 
 ### Professional Background
-With experience in the public healthcare system, Mark has worked closely with multidisciplinary medical teams, gaining profound insight into the role and significance of physiotherapy in clinical rehabilitation. After completing advanced academic and clinical training, Mark served as a physiotherapist at the Rehabilitation Clinic of The Hong Kong Polytechnic University. In this role, he was also involved in clinical teaching. Later, he joined a private orthopedic specialist medical center, focusing on providing personalized treatment plans for patients. To further enhance his professional skills and knowledge, he has pursued advanced training and acquired the following certifications and qualifications:
+With experience in the public healthcare system, Mark has worked closely with multidisciplinary medical teams, gaining profound insight into the role and significance of physiotherapy in clinical rehabilitation. After completing advanced academic and clinical training, Mark served as a physiotherapist at the Rehabilitation Clinic of The Hong Kong Polytechnic University. In this role, he was also involved in clinical teaching. Later, Mark joined a private orthopedic specialist medical center, focusing on providing personalized treatment plans for patients. To further enhance his professional skills and knowledge, Mark has pursued advanced training and acquired the following certifications and qualifications:
 
 - Registered Physiotherapy (HK)
 - BSc (Hons) in Physiotherapy (PolyU, HK)
@@ -49,4 +52,4 @@ With experience in the public healthcare system, Mark has worked closely with mu
 - Certificate in Long's bone-setting manipulations
 
 ### Public Engagement
-Mark had been a guest physiotherapist on the RTHK program "Health and Happiness". Additionally, Mark hosted an online seminar for the Rehabilitation Clinic of The Hong Kong Polytechnic University, delivering a lecture titled "Types and Causes of Running Injuries".
+Mark has been a guest physiotherapist on the RTHK program "Health and Happiness". Additionally, Mark hosted an online seminar for the Rehabilitation Clinic of The Hong Kong Polytechnic University, delivering a lecture titled "Types and Causes of Running Injuries".

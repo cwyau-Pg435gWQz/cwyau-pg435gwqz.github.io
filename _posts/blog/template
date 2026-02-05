@@ -1,11 +1,14 @@
 ---
 toc: true
 toc_sticky: true
-tagline: "健康資訊"
 header:
   overlay_color: "#333"
   overlay_image: "/assets/images/banner/banner_model_waist.png"
   show_overlay_excerpt: false
+sidebar:
+  nav: "blog"
+json_ld_list:
+  - json_ld/posts.json
 title: "臀痛? 伸延到腳? 麻痺，行路辛苦? 可能有以下病症..."
 categories:
   - 梨狀肌綜合症
@@ -15,6 +18,8 @@ tags:
   - 臀痛
   - 自我檢查
 ---
+
+第一段是DESCRIPTION, SEO.
 
 ## 梨狀肌綜合症
 梨狀肌綜合症（Piriformis Syndrome）主要特徵包括持續的臀部疼痛，可能放射至腿部，感到麻木、肌肉無力，以及在行走或坐著時出現困難。腰痛中大約佔0.6-6%，通常發生於中年人。梨狀肌起源於骶骨，連著於股骨。它的主要功能包括外旋和髖部的外展。坐骨神經通常位於梨狀肌下方，所以梨狀肌過緊，有機會壓迫到坐骨神經，引起坐骨神經痛。

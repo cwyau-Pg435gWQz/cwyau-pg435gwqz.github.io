@@ -3,11 +3,15 @@ permalink: /treatment/
 search: false
 toc: true
 toc_sticky: true
-title: ""
-tagline: "物理治療項目"
 header:
   overlay_color: "#333"
   overlay_image: "/assets/images/banner/banner_machine.jpg"
+  title: "物理治療項目"
+json_ld_list:
+  - json_ld/person_cwyau_base.json
+  - json_ld/person_cwyau_treatment.json
+title: "物理治療項目 | 手法治療 | 關節鬆動術 | 關節舒整術 | 關筋膜鬆動術 | 乾針炙 | 聚焦式衝擊波 | RF射頻筋膜刀 | 干擾波電療 | 超聲波治療 | 復康運動治療 | 牽引治療 | 冷療壓力治療 | 神經肌肉電刺激治療 | 經皮神經電刺激治療 | 普拉提 | 訂制ICB鞋墊 | 枕頭建議 | Manual Therapy | Mobilization | Manipulation | Myfascial Release | Dry Needling | Shockwave Therapy | Myofascial Release Therapy with Radiofrequency Therapy | Interferential Therapy | Ultrasound Therapy | Rehab Training | Traction Therapy | Cold Compression Therapy | Neuromuscular Electrical Stimulation, NMES | Transcutaneous Electrical Nerve Stimulation, TENS | Pilates"
+description: "邱忠榮物理治療師提供全方位專業治療項目：包括手法治療、乾針炙、聚焦式衝擊波、復康運動訓練等。我們針對頸、腰、膝關節等問題提供針對性方案，並透過超聲波、電療及牽引治療加速組織修復，助您解決痛症，恢復最佳活動能力。我們位於尖沙咀地鐵站旁，歡迎透過電話或 WhatsApp +852 6357 8708 預約諮詢。"
 gcards:
   - title: "手法治療 - 關節鬆動術 | Manual Therapy - Mobilization"
     descr: 由物理治療師以被動、有節奏的精細手法作用於患者的關節，旨在減輕疼痛及增加關節活動度。
@@ -225,7 +229,7 @@ gcards:
             url: /assets/images/treatment/pilate_2.jpg
             alt: 物理治療 | 普拉提
 
-  - title: "訂制ICB鞋墊"
+  - title: "訂制ICB鞋墊 | Custom ICB Orthotics"
     descr: 是一種基於澳洲足部生物力學設計的鞋墊。它們由不同密度的 EVA 材料製成，提供足弓和後足支撐，旨在矯正足部異常步態、分散壓力。
     gallery:
       name: glightbox
@@ -241,7 +245,7 @@ gcards:
             url: /assets/images/treatment/insole_2.jpg
             alt: 物理治療 | 訂制ICB鞋墊
 
-  - title: "枕頭建議"
+  - title: "枕頭建議 | Pillow Recommendation and Assessment"
     descr: 物理治療師會量度頸的長度和肩膀的闊, 跟據病人的情況, 建議合適的枕頭。
     gallery:
       name: glightbox
@@ -257,14 +261,4 @@ gcards:
             url: /assets/images/treatment/pillow_2.jpg
             alt: 物理治療 | 枕頭建議
 ---
-{% include gcards id="gcards" n_cols=1 %}
-
-
-<!-- <aside class="sidebar__right sticky">
-<nav class="toc" markdown="1">
-<header><h4 class="nav__title"><i class="fas fa-{{ include.icon | default: 'file-alt' }}"></i> {{ include.title | default: site.data.ui-text[site.locale].toc_label }}</h4></header>
-<ul class="toc__menu">
-<li><a href="#group-by-array">Group by array</a></li>
-</ul>
-</nav>
-</aside> -->
+{% include gcards id="gcards" n_cols=1 back_to_top=true %}

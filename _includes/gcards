@@ -6,6 +6,8 @@
     @param {string} id - Unique ID.
     @param {number} n_cols - Maximum number of columns to display in the grid.
                              Actual number determined by screen size.
+    @param {boolean} back_to_top - [OPTIONAL] Add "Back To Top" to each card.
+                                   (default: false)
 
   =============================================================================
   FRONT MATTER DEFINITION
@@ -60,19 +62,24 @@
                 {% endif %}
               </div>
               <div class="card-body {% if gcard.image_position == 'left' %}col-md-8{% endif %}">
-              {% if gcard.title %}
-                <h2 class="gcard-title" id="{{ gcard.title | escape_once }}">{{ gcard.title | escape_once }}</h2>
-              {% endif %}
-              {% if gcard.descr %}
-                <div class="gcard-descr">{{ gcard.descr | escape_once }}</div>
-              {% endif %}
-              {% case gcard.gallery.name %}
-                {% when 'glightbox' %}
-                  {% assign gallery_id = "gcards-id-" | append: gcards_id | append: "-gallery-id-" | append: forloop.index %}
-                  <div class="gcard-attachment">{% include glightbox id=gallery_id data=gcard.gallery %}</div>
-                {% else %}
-              {% endcase %}
-            </div>
+                {% if gcard.title %}
+                  <h2 class="gcard-title" id="{{ gcard.title | escape_once }}">{{ gcard.title | escape_once }}</h2>
+                {% endif %}
+                {% if gcard.descr %}
+                  <div class="gcard-descr">{{ gcard.descr | escape_once }}</div>
+                {% endif %}
+                {% case gcard.gallery.name %}
+                  {% when 'glightbox' %}
+                    {% assign gallery_id = "gcards-id-" | append: gcards_id | append: "-gallery-id-" | append: forloop.index %}
+                    <div class="gcard-attachment">{% include glightbox id=gallery_id data=gcard.gallery %}</div>
+                  {% else %}
+                {% endcase %}
+                {% if include.back_to_top == true %}
+                  <div class="gcard-back-to-top">
+                    <a href="#top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+                  </div>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>

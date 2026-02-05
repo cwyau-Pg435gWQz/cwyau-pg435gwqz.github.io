@@ -44,3 +44,13 @@
   margin-top: .83em;
   margin-bottom: .83em;
 }
+
+.gcard-back-to-top {
+	display: block;
+	clear: both;
+	color: #646769;
+	font-size: 0.6em;
+	text-transform: uppercase;
+	text-align: end;
+	text-decoration: none;
+}

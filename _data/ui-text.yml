@@ -474,7 +474,7 @@ zh-TW: &DEFAULT_ZH_HANT
   search_label_text          : "輸入您要搜尋的關鍵字..."
   search_placeholder_text    : "輸入您要搜尋的關鍵字..."
   search_algolia_no_results  : "找不到結果"
-  results_found              : "找到結果"
+  results_found              : "個匹配結果"
   back_to_top                : "回到頁首"
 zh-HK:
   <<: *DEFAULT_ZH_HANT
