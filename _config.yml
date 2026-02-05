@@ -173,6 +173,10 @@ defaults:
       share: true
       related: true
       show_date: true
+      invite_feedback: |
+        如你對文章內容有任何疑問或建議，歡迎與我聯絡：
+        [<i class="fab fa-whatsapp"></i>](https://wa.me/85263578708)
+        {: .notice--success}
   # _pages
   - scope:
       path: "_pages"
