@@ -229,7 +229,7 @@ gcards:
             url: /assets/images/treatment/pilate_2.jpg
             alt: 物理治療 | 普拉提
 
-  - title: "訂制ICB鞋墊"
+  - title: "訂制ICB鞋墊 | Custom ICB Orthotics"
     descr: 是一種基於澳洲足部生物力學設計的鞋墊。它們由不同密度的 EVA 材料製成，提供足弓和後足支撐，旨在矯正足部異常步態、分散壓力。
     gallery:
       name: glightbox
@@ -245,7 +245,7 @@ gcards:
             url: /assets/images/treatment/insole_2.jpg
             alt: 物理治療 | 訂制ICB鞋墊
 
-  - title: "枕頭建議"
+  - title: "枕頭建議 | Pillow Recommendation and Assessment"
     descr: 物理治療師會量度頸的長度和肩膀的闊, 跟據病人的情況, 建議合適的枕頭。
     gallery:
       name: glightbox
