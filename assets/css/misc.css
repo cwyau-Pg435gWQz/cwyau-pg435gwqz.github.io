@@ -101,11 +101,8 @@ a img {
   height: 100%;
   width: auto;
   object-fit: contain;
-  /* Lower z-index to stay behind the text (which has z-index: 2) */
   z-index: 1;
-  /* Critical: prevents the image from blocking clicks on links/text */
   pointer-events: none;
-  /* Optional: add a slight transparency so text pops even more */
   opacity: 0.8;
 }
 
@@ -137,7 +134,6 @@ a img {
   margin-right: .5em;
   text-align: right;
   font-weight: bold;
-
 }
 
 .whatsapp-icon {
