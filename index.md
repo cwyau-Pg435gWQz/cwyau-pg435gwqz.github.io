@@ -1,6 +1,6 @@
 ---
 search: false
-layout: full-width-tile
+layout: homepage
 json_ld_list:
   - json_ld/person_cwyau_base.json
   - json_ld/person_cwyau_business.json

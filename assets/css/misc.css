@@ -42,13 +42,13 @@
 }
 
 /* New layout that needs to overwides some existing MM styling */
-/* .layout--full-width-tile .page__hero {
+/* .layout--homepage .page__hero {
   margin-bottom: 0 !important;
 } */
-.layout--full-width-tile .page__footer {
+.layout--homepage .page__footer {
   margin-top: 0 !important;
 }
-.layout--full-width-tile #main {
+.layout--homepage #main {
   max-width: 100%;
   padding-inline: 0;
 }
