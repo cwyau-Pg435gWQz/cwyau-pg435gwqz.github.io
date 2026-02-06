@@ -9,53 +9,68 @@ sidebar:
   nav: "blog"
 json_ld_list:
   - json_ld/posts.json
-title: "臀痛? 伸延到腳? 麻痺，行路辛苦? 可能有以下病症..."
+title: "(TODO)臀痛? 伸延到腳? 麻痺，行路辛苦? 可能有以下病症..."
 categories:
+  - (TODO)
   - 梨狀肌綜合症
 tags:
+  - (TODO)
   - 梨狀肌綜合症
   - 臀部
   - 臀痛
   - 自我檢查
 ---
 
-第一段是DESCRIPTION, SEO.
+注意:
+- 第一段十分重要, 要概括整篇文章, SEO 會用.
+- 用 #, ##, ### 表示不同層級的 Heading
+- **粗體**, *斜體*, ***粗+斜體***
+- Bullet point list, 每行用 "- " 開頭
+- Numbered list, 每行用數字開頭, 如 "1. " "2. "
+- 兩段之間要留一行空白, 否則不視為分段.
+- 插入YouTube. ID 從連結的尾部得到.
+  - 連結: https://www.youtube.com/watch?v=rbifByGcy9s
+  - 結果: {% include video id="rbifByGcy9s" provider="youtube" %}
+- 藍色文字小框. 打一行字, 然後下一行加 {: .notice--info}
+- 連結: [文字](https://abc.com/d/e).
+- 其他 Markdown 語法: https://www.markdownguide.org/basic-syntax/#overview
+-----------------------------
 
-## 梨狀肌綜合症
+# 梨狀肌綜合症
 梨狀肌綜合症（Piriformis Syndrome）主要特徵包括持續的臀部疼痛，可能放射至腿部，感到麻木、肌肉無力，以及在行走或坐著時出現困難。腰痛中大約佔0.6-6%，通常發生於中年人。梨狀肌起源於骶骨，連著於股骨。它的主要功能包括外旋和髖部的外展。坐骨神經通常位於梨狀肌下方，所以梨狀肌過緊，有機會壓迫到坐骨神經，引起坐骨神經痛。
 
-## 成因
+# 成因
 梨狀肌綜合症可以分為兩類：
 
 - **原發性**：涉及解剖變異（如裂開的梨狀肌），但相對少見。
 - **繼發性**：通常由創傷、肌肉痙攣或過度使用引起。長時間跑步或長時間的不正確的坐姿都可能加劇症狀。
 
-## 10秒簡單自我檢查
+# 10秒簡單自我檢查
 
 患者需雙腳併攏，膝蓋彎曲 90 度坐著。將雙手放置於患者膝蓋的外側，患者抵抗地推開膝蓋。觀察的重點是是否出現臀部疼痛、坐骨神經痛或受影響側的肌肉無力。
 
 {% include video id="u1kBZeCI4zE" provider="youtube" %}
 
-## 物理治療運動有助復康
+# 物理治療運動有助復康
 
-### 家居熱療法
+## 家居熱療法
 在伸展之前使用熱敷(不要太高溫，以免燙傷)可以提高效果。
 
 10-15分鐘，每天2-3次。
 {: .notice--info}
 
-### 4字伸展：放鬆梨狀肌
+## 4字伸展：放鬆梨狀肌
 
 {% include video id="dbfBQPY-BfQ" provider="youtube" %}
 
-### 強化臀部肌肉，減輕梨狀肌的負荷
+## 強化臀部肌肉，減輕梨狀肌的負荷
 
 保持20秒，20次一組，每日3-4組。
 {: .notice--info}
 
 {% include video id="EgfL0gvZE-Q" provider="youtube" %}
 
-### 強化臀中肌運動
+## 強化臀中肌運動
 
 保持20秒，20次一組，每日3-4組。
 {: .notice--info}
