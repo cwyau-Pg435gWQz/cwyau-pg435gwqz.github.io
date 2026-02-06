@@ -196,3 +196,12 @@ tag_archive:
 
 jsonld:
   org_rehabmotion: "https://www.rehabmotion.hk/#organization"
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: ["<!--", "-->"]
+  end_of_line: false
+  profile: false # set to true to see report in terminal

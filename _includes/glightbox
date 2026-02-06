@@ -62,15 +62,15 @@
 </div>
 
 <script type="text/javascript">
-  // Create a registry if not existed
+  <!-- Create a registry if not existed -->
   window.galleryRegistry = window.galleryRegistry || {};
 
-  // Save the gallery instance for later use
+  <!-- Save the gallery instance for later use -->
   window.galleryRegistry['{{ thumbGrid_id }}'] = {
     'name': 'glightbox',
     'instance': GLightbox({
         selector: '.{{ glightbox_id }}',
-        descPosition: 'bottom' // (bottom, top, left, right)
+        descPosition: 'bottom' <!-- (bottom, top, left, right) -->
       }),
   };
 </script>
