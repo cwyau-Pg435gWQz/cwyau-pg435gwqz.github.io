@@ -65,6 +65,9 @@
                 {% if gcard.title %}
                   <h1 class="gcard-title" id="{{ gcard.title | escape_once }}">{{ gcard.title | escape_once }}</h1>
                 {% endif %}
+                {% if gcard.subtitle %}
+                  <div class="gcard-subtitle">{{ gcard.subtitle | escape_once }}</div>
+                {% endif %}
                 {% if gcard.descr %}
                   <div class="gcard-descr">{{ gcard.descr | escape_once }}</div>
                 {% endif %}

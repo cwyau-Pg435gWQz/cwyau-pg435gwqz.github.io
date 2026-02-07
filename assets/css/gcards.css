@@ -37,7 +37,12 @@
 
 .gcard-title {
   margin-top: 0;
+  margin-bottom: 0;
 }
+
+/* h1.gcard-title {
+  margin-bottom: 0;
+} */
 
 .gcard-descr {
   font-size: .75em;
