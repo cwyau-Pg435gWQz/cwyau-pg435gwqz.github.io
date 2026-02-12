@@ -25,6 +25,9 @@ jobs:
       - name: Build with Jekyll
         run: bundle exec jekyll build
 
+      - name: File Busting
+        run: python assets/py/file_busting.py
+
       # To subset used characters from ttf to make a small woff2
       # - name: Set up Python
       #   uses: actions/setup-python@v5
