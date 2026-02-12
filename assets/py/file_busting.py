@@ -29,7 +29,6 @@ p4 = re.compile(r'''<[^>]*?style=["\'][^"\']*url\([^\)]*?\)[^"\']*["\'][^>]*>'''
 
 def replacer(match):
     def _replacer(match):
-        print(match)
         p1 = match.group('p1')
         p2 = match.group('p2')
         p3 = match.group('p3')
@@ -59,8 +58,7 @@ for root, dirs, files in os.walk('_site'):
         with open(path, 'r') as f:
             content = f.read()
 
-        # for pattern in [p1, p2, p3, p4]:
-        for pattern in [p4]:
+        for pattern in [p1, p2, p3, p4]:
             content = pattern.sub(replacer, content)
 
         with open(path, 'w') as f:
