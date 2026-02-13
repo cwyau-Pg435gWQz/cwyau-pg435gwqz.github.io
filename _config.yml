@@ -50,7 +50,7 @@ lunr:
 # facebook:
 #   app_id:  # A Facebook app ID
 #   publisher:  # A Facebook page URL or ID of the publishing entity
-og_image: /assets/images/bio.webp
+og_image: /assets/images/og_image.webp
 
 # Include social profile in search results
 social:
