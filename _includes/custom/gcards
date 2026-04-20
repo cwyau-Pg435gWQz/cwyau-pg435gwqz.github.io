@@ -38,9 +38,12 @@
   {% assign gcards = page.gcards %}
 {% endif %}
 
+{% assign use_interactive_table = false %}
 <section class="bento-grid-container">
   <div class="bento-grid" style="--hsize:{{ include.n_cols | default: 1 }}; --vsize: auto; min-height:0">
     {% for gcard in gcards %}
+
+
       {% assign title_tag = gcard.title_tag | default: "h1" %}
       {% if title_tag == "none" %}{% assign title_tag = "div" %}{% endif %}
 
@@ -66,6 +69,13 @@
             {% when 'glightbox' %}
               {% assign gallery_id = "gcards-" | append: forloop.index %}
               <div class="content">{% include custom/glightbox id=gallery_id data=gcard.gallery %}</div>
+            {% when 'interactive_table' %}
+              {% assign use_interactive_table = true %}
+              <div class="itbl-module-trigger"
+                   data-table='{{ gcard.gallery.rows | jsonify | escape }}'
+                   style="cursor: pointer; margin-top: auto;">
+                <span class="itbl-cta-text">觀看影片 <i class="fa-solid fa-play"></i></span>
+              </div>
           {% endcase %}
 
           {% if include.back_to_top %}
@@ -77,8 +87,9 @@
             </div>
           {% endif %}
         </div>
-
       </div>
     {% endfor %}
   </div>
 </section>
+
+

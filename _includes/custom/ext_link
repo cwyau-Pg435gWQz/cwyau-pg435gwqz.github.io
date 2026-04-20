@@ -2,12 +2,13 @@
    rel="noopener"
    target="_blank"
    aria-label="{{ include.text }}"
-   {{ include.attr | escape}}>
-  {% if include.html %}
+  {%- if include.attr -%}{{ include.attr | escape}}{%- endif -%}
+>
+  {%- if include.html -%}
     {{ include.html }}
-  {% elsif include.img %}
+  {%- elsif include.img -%}
     <img src="{{ include.img | relative_url }}" alt="{{ include.text }}"/>
-  {% else %}
+  {%- else -%}
     {{ include.text }}
-  {% endif %}
+  {%- endif -%}
 </a>

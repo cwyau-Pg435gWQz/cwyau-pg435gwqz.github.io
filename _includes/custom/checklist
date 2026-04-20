@@ -1,0 +1,17 @@
+{%- assign text = include.text -%}
+{%- assign item_id = include.item_id -%}
+{%- assign type = include.type -%}
+{%- assign maxlength = include.maxlength | plus: 0 -%}
+{%- assign box_size = maxlength | plus: 3 -%}
+{%- if include.group_id -%}
+  {%- assign group_id = include.group_id -%}
+{%- else %}
+  {%- assign group_id = 0 -%}
+{%- endif -%}
+{%- capture input_id -%}checklist-item{{ group_id }}-{{ item_id }}{%- endcapture -%}
+{%- case type -%}
+  {%- when 'checkbox' -%}
+<input class="checklist checklist-group{{ group_id }}" type="checkbox" id="{{ input_id }}" style="    accent-color: #2ecc71;transform: scale(1.5);margin-right: 10px;cursor: pointer;"><label style="display:inline" for="{{ input_id }}"> {{ text }}</label>
+  {%- when 'numeric_edit' -%}
+<input class="checklist checklist-group{{ group_id }}" type="text" id="{{ input_id }}" style="width:{{ box_size }}ch" inputmode="decimal" maxlength="{{ maxlength }}" placeholder="{{ text }}" oninput="validateNumericInput(this)">
+{%- endcase -%}

@@ -34,6 +34,11 @@
   {% include custom/js src="/assets/js/custom/thumbgrid.js" %}
 {% endif %}
 
+{% if page.url == "/schoolbag/" %}
+  {% include custom/js src="/assets/js/custom/interactive_table.js" %}
+  {% include custom/js src="/assets/js/custom/schoolbag_checklist.js" %}
+{% endif %}
+
 {% if page.url == "/" or page.url contains "/blog/" %}
   {% include custom/js src="/assets/js/custom/lite-yt.js" %}
 {% endif %}

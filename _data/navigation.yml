@@ -1,6 +1,8 @@
 main:
   - title: "簡介"
     url: /about/
+  - title: "書包專題"
+    url: /schoolbag/
   - title: "中心地址"
     url: /contact/
   - title: "物理治療流程"
