@@ -267,16 +267,52 @@ $md-width: 768px;
   backdrop-filter: none;
 
   @media (min-width: $md-width) {
+    /* Image on Left (Row) */
     &[data-img-pos="left"] {
       flex-direction: row;
+    }
 
+    /* Image on Right (Row Reverse) */
+    &[data-img-pos="right"] {
+      flex-direction: row-reverse;
+    }
+
+    /* Image on Bottom (Column Reverse) */
+    &[data-img-pos="bottom"] {
+      flex-direction: column-reverse;
+      
+      .image {
+        padding-top: 0; /* Adjust padding if needed for bottom pos */
+        padding-bottom: 12px;
+      }
+    }
+
+    /* Image on Top (Standard Column) */
+    &[data-img-pos="top"] {
+      flex-direction: column;
+    }
+
+    /* Keep images consistent in horizontal layouts */
+    &[data-img-pos="left"], &[data-img-pos="right"] {
       .image {
         max-width: 33%;
-        object-fit: scale-down; /* keep aspect-ratio */
+        object-fit: scale-down;
         object-position: top;
       }
     }
   }
+
+  // @media (min-width: $md-width) {
+  //   &[data-img-pos="left"] {
+  //     flex-direction: row;
+
+  //     .image {
+  //       max-width: 33%;
+  //       object-fit: scale-down; /* keep aspect-ratio */
+  //       object-position: top;
+  //     }
+  //   }
+  // }
 
   h1 {
     margin-top: 0;
