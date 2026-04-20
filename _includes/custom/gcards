@@ -15,11 +15,14 @@
   @description
 
   @param {string} title - [OPTIONAL] Title.
+  @param {string} title_tag - [OPTIONAL] One of {h1 (default), h2, h3, h4, h5
+                                         h6, none}
   @param {string} descr - [OPTIONAL] Description.
   @param {object} image - [OPTIONAL]
     @param {string} image.url - [OPTIONAL] URL to the image.
     @param {string} image.alt - [OPTIONAL] Accessibility description.
-  @param {string} image_position - [OPTIONAL] One of {top (default), left}.
+  @param {string} image_position - [OPTIONAL] One of {top (default), left,
+                                              right, bottom}.
   @param {object} gallery - [OPTIONAL]
     @param {string} name - [REQUIRED] One of {glightbox, }.
                            Its parameters should be appended as sibling.
@@ -36,8 +39,11 @@
 {% endif %}
 
 <section class="bento-grid-container">
-  <div class="bento-grid" style="--vsize:{{ include.n_cols | default: 1 }};--hsize:1;min-height:0">
+  <div class="bento-grid" style="--hsize:{{ include.n_cols | default: 1 }}; --vsize: auto; min-height:0">
     {% for gcard in gcards %}
+      {% assign title_tag = gcard.title_tag | default: "h1" %}
+      {% if title_tag == "none" %}{% assign title_tag = "div" %}{% endif %}
+
       {% assign img_pos = gcard.image_position | default: "top" %}
 
       <div class="therapy-grid-tile" data-img-pos="{{ img_pos }}">
@@ -50,7 +56,7 @@
 
         <div class="detail">
           {% if gcard.title %}
-            <h1 id="{{ gcard.title | slugify }}" class="title">{{ gcard.title }}</h1>
+            <{{ title_tag }} id="{{ gcard.title | slugify }}" class="title">{{ gcard.title }}</{{ title_tag }}>
           {% endif %}
 
           {% if gcard.subtitle %}<div class="subtitle">{{ gcard.subtitle }}</div>{% endif %}

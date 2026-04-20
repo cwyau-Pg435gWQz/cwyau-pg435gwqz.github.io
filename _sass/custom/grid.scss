@@ -28,8 +28,8 @@ $md-width: 768px;
 
 @media (min-width: $md-width) {
   .grid {
-      grid-template-rows: repeat(var(--vsize, 3), minmax(0, 1fr));
       grid-template-columns: repeat(var(--hsize, 4), 1fr);
+      grid-template-rows: repeat(var(--vsize, 3), minmax(0, 1fr));
   }
   .grid-tile {
     grid-row: span var(--vspan, 1);
@@ -266,6 +266,11 @@ $md-width: 768px;
   border-radius: 12px;
   backdrop-filter: none;
 
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  width: 100%;
+
   @media (min-width: $md-width) {
     /* Image on Left (Row) */
     &[data-img-pos="left"] {
@@ -280,7 +285,7 @@ $md-width: 768px;
     /* Image on Bottom (Column Reverse) */
     &[data-img-pos="bottom"] {
       flex-direction: column-reverse;
-      
+
       .image {
         padding-top: 0; /* Adjust padding if needed for bottom pos */
         padding-bottom: 12px;
@@ -302,21 +307,22 @@ $md-width: 768px;
     }
   }
 
-  // @media (min-width: $md-width) {
-  //   &[data-img-pos="left"] {
-  //     flex-direction: row;
-
-  //     .image {
-  //       max-width: 33%;
-  //       object-fit: scale-down; /* keep aspect-ratio */
-  //       object-position: top;
-  //     }
-  //   }
-  // }
-
-  h1 {
+  /* Ensure .title looks like a heading regardless of the tag used */
+  .title {
+    display: block;
+    font-weight: 700;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+    color: black;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  /* Reset default margins for actual H tags to stay consistent with .title */
+  h1, h2, h3, h4, h5, h6 {
+    &.title {
+      margin: 0;
+    }
   }
 
   .content {
@@ -335,6 +341,9 @@ $md-width: 768px;
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    justify-content: flex-start; /* Aligns content to the top */
+    flex-grow: 1;
   }
 
   .footnote {
