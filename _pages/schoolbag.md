@@ -280,9 +280,7 @@ gcards:
       rows:
         - cols:
            - title: 影片
-           - youtube:
-               id: AlNIVAmkyzA
-               title: 強化臀中肌運動 | YouTube 影片
+           - descr: 更新中
         - cols:
            - title: 動作重點
            - descr: |
