@@ -52,14 +52,14 @@ function updateWeightStatus() {
     message = `
       <div style="color: green;">請輸入體重及書包重量</div>
     `;
-  } else if ( bagWeight / kidWeight <= .15) {
+  } else if ( bagWeight / kidWeight <= .1) {
     message = `
-      <div style="color: green;">符合 15% 黃金比例</div>
+      <div style="color: green;">符合 10% 黃金比例</div>
     `;
   } else {
-    const diff = (bagWeight - kidWeight * .15).toFixed(2);
+    const diff = (bagWeight - kidWeight * .1).toFixed(2);
     message = `
-      <div style="color: blue;">已超過15%建議負荷 ${diff}kg，可能增加脊椎受壓風險</div>
+      <div style="color: blue;">已超過10%建議負荷 ${diff}kg，可能增加脊椎受壓風險</div>
     `;
   }
   result.innerHTML = message;
