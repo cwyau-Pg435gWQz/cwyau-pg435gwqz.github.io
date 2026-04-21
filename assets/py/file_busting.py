@@ -46,7 +46,7 @@ cmd = ['git', 'log', '--format=%h', '--name-only', '--', ASSET_FOLDER]
 for line in subprocess.check_output(cmd, text=True).splitlines():
     if re.match(r'[a-f0-9]{6}', line):
         last_hash = line
-    elif re.match(rf'^{ASSET_FOLDER}', line):
+    elif re.match(rf'^{ASSET_FOLDER}', line) and line not in HASHES:
         HASHES[line] = last_hash
 
 for root, dirs, files in os.walk('_site'):
