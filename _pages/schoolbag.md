@@ -27,7 +27,7 @@ gcards:
            - descr: |
                子女: 平躺雙腳踩地，抬起屁股讓身體呈一直線
                父母: 將球從孩子的臀部下方橫向推過
-               保持10秒，10次/組, 每天2-3組
+               保持10秒，10次/組，每天2-3組
         - cols:
            - title: 家長觀察點
            - descr: |
@@ -257,7 +257,7 @@ gcards:
            - title: 動作重點
            - descr: |
                膝蓋微離地，背部平如桌面！讓孩子像小熊一樣穩健爬行，鍛鍊撐起書包的全身力量
-               來回爬行5米, 每天2-3次
+               來回爬行5米，每天2-3次
         - cols:
            - title: 家長觀察點
            - descr: |
@@ -288,7 +288,7 @@ gcards:
            - descr: |
                子女: 平躺雙腳踩地，抬起屁股讓身體呈一直線
                父母: 將球從孩子的臀部下方橫向推過
-               保持10秒，10次/組, 每天2-3組
+               保持10秒，10次/組，每天2-3組
         - cols:
            - title: 家長觀察點
            - descr: |
@@ -330,7 +330,8 @@ gcards:
 ### 書包 10 大貼士：讓孩子的脊椎健康成長
 
 #### 【書包選購指南】
-<br><img src="/assets/images/schoolbag/PIC2.webp" style="max-width:200px" alt="書包"><br>- **肩帶要寬且厚**
+<br><img src="/assets/images/schoolbag/PIC2.webp" style="max-width:200px" alt="書包"><br>
+- **肩帶要寬且厚**
 
   肩帶寬度約 5cm 和至少有1 - 1.5 cm厚度的良好墊肩
 - **胸帶**
@@ -415,7 +416,6 @@ gcards:
 
 ### 3 分鐘居家檢查：孩子的脊椎姿勢健康達標嗎？
 
-
 1. 雙肩平衡檢查 (正面)
   - 觀察點：孩子自然站立，雙手垂直。
   - 檢查內容：
@@ -423,26 +423,26 @@ gcards:
     <br><img src="/assets/images/schoolbag/PIC3.webp" style="max-width:200px" alt="左右肩膀高低不平衡？"><br>
     <br>{%- include custom/checklist type="checkbox" group_id=1 item_id=2 text="左右肩盆骨(腰部)高低不平衡？" -%}
     <br><img src="/assets/images/schoolbag/PIC4.webp" style="max-width:200px" alt="左右肩盆骨(腰部)高低不平衡？"><br>
-  - **邱忠榮理治療師提提你**：若有明顯高低肩或盆骨不平衡，可能是長期單肩受力或脊椎側彎的早期徵兆。
+  - **邱忠榮物理治療師提提你**：若有明顯高低肩或盆骨不平衡，可能是長期單肩受力或脊椎側彎的早期徵兆。
 
 2. 側影黃金線 (側面)
   - 觀察點：請孩子看向前方，拍攝一張側面照。
   - 檢查內容：
     <br>{% include custom/checklist type="checkbox" group_id=2 item_id=1 text="耳朵是明顯在肩膀前方（烏龜頸/頭前傾）？" %}
       <br><img src="/assets/images/schoolbag/PIC5.webp" style="max-width:200px" alt="耳朵是明顯在肩膀前方（烏龜頸/頭前傾）？"><br>
-    <br>{% include custom/checklist type="checkbox" group_id=2 item_id=2 text="背靠牆時腰部後方有明顯的空間, 可放入整隻手掌（盆骨前傾）？" %}
-      <br><img src="/assets/images/schoolbag/PIC6.webp" style="max-width:200px" alt="背靠牆時腰部後方有明顯的空間, 可放入整隻手掌（盆骨前傾）？"><br>
-  - **邱忠榮理治療師提提你**：頭部每前傾 2.5cm，頸椎就要多負擔約 4.5kg 的重量，這也是導致孩子肩頸痠痛的主因。
+    <br>{% include custom/checklist type="checkbox" group_id=2 item_id=2 text="背靠牆時腰部後方有明顯的空間，可放入整隻手掌（盆骨前傾）？" %}
+      <br><img src="/assets/images/schoolbag/PIC6.webp" style="max-width:200px" alt="背靠牆時腰部後方有明顯的空間，可放入整隻手掌（盆骨前傾）？"><br>
+  - **邱忠榮物理治療師提提你**：頭部每前傾 2.5cm，頸椎就要多負擔約 4.5kg 的重量，這也是導致孩子肩頸痠痛的主因。
 
 3. 姿勢穩定度測試
 <br><img src="/assets/images/schoolbag/PIC7.webp" style="max-width:200px" alt="姿勢穩定度測試"><br>
   - 示範影片 : 更新中
   - 觀察點：將雙臂向前平舉 90 度，手掌朝下30秒
   - 檢查內容：
-    <br>{% include custom/checklist type="checkbox" group_id=3 item_id=1 text="上身明顯後傾（用來抵銷手臂重量）" %}
+    <br>{% include custom/checklist type="checkbox" group_id=3 item_id=1 text="上身明顯後傾（用來抵銷手臂重量）？" %}
     <br>{% include custom/checklist type="checkbox" group_id=3 item_id=2 text="出現骨盆前傾或腹部凸出？" %}
     <br>{% include custom/checklist type="checkbox" group_id=3 item_id=3 text="肩胛骨明顯聳起或脊椎側彎角度變化？" %}
-    <br>{% include custom/checklist type="checkbox" group_id=3 item_id=4 text="無法維持手臂高度或開始發抖" %}
+    <br>{% include custom/checklist type="checkbox" group_id=3 item_id=4 text="無法維持手臂高度或開始發抖？" %}
 
 4. 下肢壓力問題
   - 觀察點：是否抱怨腳底或膝蓋痛？
@@ -450,18 +450,18 @@ gcards:
     <br>{% include custom/checklist type="checkbox" group_id=4 item_id=1 text="孩子經常抱怨腳底痛、足底筋膜處酸痛？" %}
     <br>{% include custom/checklist type="checkbox" group_id=4 item_id=2 text="走路或運動後頻繁提到膝蓋不適？" %}
     <br>{% include custom/checklist type="checkbox" group_id=4 item_id=3 text="鞋底磨損嚴重不平均（如內側磨損嚴重）？" %}
-  - **邱忠榮理治療師提提你**：腳底與膝蓋痛往往與足弓支撐不足（扁平足）地基不穩，脊椎也可能會受累
+  - **邱忠榮物理治療師提提你**：腳底與膝蓋痛往往與足弓支撐不足（扁平足）地基不穩，脊椎也可能會受累
 
 **結果：**
 
-<div id="checklist-result" style="font-weight: bold;"></div>
+<div id="checklist-result"></div>
 
 ### 書包重量計算器
 
 1. 孩子體重： {% include custom/checklist type="numeric_edit" group_id=10 item_id=1 maxlength="6" text="0.0" %} kg
 2. 目前書包重量： {% include custom/checklist type="numeric_edit" group_id=10 item_id=2 maxlength="6" text="0.0" %} kg
 
-<div id="weight-result" style="font-weight: bold;"></div>
+<div id="weight-result"></div>
 
 
 ### 「邱忠榮物理治療師線上書包初步評估」

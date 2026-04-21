@@ -339,4 +339,4 @@ gcards:
           thumb:
             url: /assets/images/treatment/pillow_2-0090.webp
 ---
-{% include custom/gcards id="gcards" n_cols=1 %}
+{% include custom/gcards id="gcards" n_cols=1 back_to_top=true %}

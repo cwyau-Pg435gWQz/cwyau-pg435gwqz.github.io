@@ -20,14 +20,14 @@ function updateChecklistStatus() {
 
   let message = `
     <ol>
-      <li>請繼續保持親子運動。</li>
+      <li><span style="color: green;">請繼續保持親子運動。</span></li>
     </ol>
   `;
   if (group1Count >= 1 || group2Count >= 1 || group3Count >= 1 || group4Count >= 2) {
     message = `
       <ol>
-        <li>請繼續保持親子運動。</li>
-        <li>風險：孩子可能存在姿勢問題。<a href="https://wa.me/85263578708">[按此預約邱忠榮物理治療首診評估]</a></li>
+        <li><span style="color: blue;">請繼續保持親子運動。</span></li>
+        <li><span style="color: blue;">孩子可能存在姿勢問題。</span><a href="https://wa.me/85263578708" rel="noopener" target="_blank"><span> [按此預約邱忠榮物理治療首診評估] <i class="fab fa-whatsapp whatsapp-icon"></i></span> </a></li>
       </ol>
     `;
   }
@@ -59,7 +59,7 @@ function updateWeightStatus() {
   } else {
     const diff = (bagWeight - kidWeight * .15).toFixed(2);
     message = `
-      <div style="color: red;">警告：已超過15% 的建議負荷 ${diff}kg，可能增加脊椎受壓風險</div>
+      <div style="color: blue;">已超過15%建議負荷 ${diff}kg，可能增加脊椎受壓風險</div>
     `;
   }
   result.innerHTML = message;
