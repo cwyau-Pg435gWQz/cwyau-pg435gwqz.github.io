@@ -57,7 +57,13 @@ layout: default
               {% for item in page.news %}
                 <div class="news-item">
                   {% if item.date %}<div class="date">{{ item.date }}</div>{% endif %}
-                  {{ item.text }}
+                  {%- if item.url -%}
+                    {%- if item.url contains '://' -%}
+                      {%- include custom/ext_link url=item.url text=item.text -%}
+                    {%- else -%}
+                      {%- include custom/int_link url=item.url text=item.text -%}
+                    {%- endif -%}
+                  {%- endif -%}
                 </div>
               {% endfor %}
             </div>
