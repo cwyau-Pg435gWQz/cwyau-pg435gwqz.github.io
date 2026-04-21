@@ -468,7 +468,9 @@ gcards:
 
 ### 「邱忠榮物理治療師線上書包初步評估」
 
-請通過此 Google Form 提交評估所需資料。
+如您有 Google 帳號，歡迎使用此 {% include custom/ext_link url="https://forms.gle/YiGjucWmZxit7VgU6" text="Google Form" %} 提交評估所需資料。
+
+您亦可以通過{% include custom/ext_link url="https://wa.me/85263578708?text=你好，我想找邱忠榮物理治療師做線上書包初步評估。" text=" Whatsapp 聯絡邱忠榮物理治療師" %}以提交所需資料。
 
 ## 相關網頁
 
