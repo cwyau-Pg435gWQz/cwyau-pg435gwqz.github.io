@@ -4,6 +4,7 @@ import subprocess
 
 HASHES = {}
 ASSET_FOLDER = 'assets'
+SASS_DEPENDENCIES = ['_sass', 'assets/css/main.scss']
 HOST = r'''(?P<HOST>(?:cwyau.hk|www.cwyau.hk|localhost:4000|))'''
 PATH = rf'''(?P<PATH>{ASSET_FOLDER}\/[^"\']+)'''
 EXT = (
@@ -33,7 +34,10 @@ def replacer(match):
         p2 = match.group('p2')
         p3 = match.group('p3')
 
-        if (h := HASHES.get(p2)) or (p2.endswith('.css') and (h := HASHES.get(f'{p2[:-4]}.scss'))):
+        if p2 == 'assets/css/main.css' and LATEST_SASS_HASH:
+            h = LATEST_SASS_HASH
+            return f'{p1}{p2}?h={h}{p3}'
+        elif (h := HASHES.get(p2)) or (p2.endswith('.css') and (h := HASHES.get(f'{p2[:-4]}.scss'))):
             return f'{p1}{p2}?h={h}{p3}'
         else:
             return match.group(0)
@@ -41,6 +45,15 @@ def replacer(match):
         return _replacer(match)
     else:
         return p0.sub(_replacer, match.group(0))
+
+# Get the latest commit hash for the SASS folder and use it for main.css
+# so that any change of the files in the SASS folder or the main.scss
+# will yield a new hash.
+try:
+    cmd = ['git', 'log', '-1', '--format=%h', '--', *SASS_DEPENDENCIES]
+    LATEST_SASS_HASH = subprocess.check_output(cmd, text=True).strip()
+except Exception:
+    LATEST_SASS_HASH = None
 
 cmd = ['git', 'log', '--format=%h', '--name-only', '--', ASSET_FOLDER]
 for line in subprocess.check_output(cmd, text=True).splitlines():
