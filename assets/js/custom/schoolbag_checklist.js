@@ -43,31 +43,8 @@ function validateNumericInput(input) {
 }
 
 function updateChecklistStatus() {
-  const result = document.getElementById('checklist-result');
-  const group1Count = document.querySelectorAll('input.checklist-group1:checked').length;
-  const group2Count = document.querySelectorAll('input.checklist-group2:checked').length;
-  const group3Count = document.querySelectorAll('input.checklist-group3:checked').length;
-  const group4Count = document.querySelectorAll('input.checklist-group4:checked').length;
-
-  // For displaying result
-  let message = `
-    <ol>
-      <li><span style="color: green;">請繼續保持親子運動。</span></li>
-    </ol>
-  `;
-  if (group1Count >= 1 || group2Count >= 1 || group3Count >= 1 || group4Count >= 2) {
-    message = `
-      <ol>
-        <li><span style="color: blue;">請繼續保持親子運動。</span></li>
-        <li><span style="color: blue;">孩子可能存在姿勢問題。</span><a href="https://wa.me/85263578708" rel="noopener" target="_blank"><span> [按此預約邱忠榮物理治療首診評估] <i class="fab fa-whatsapp whatsapp-icon"></i></span> </a></li>
-      </ol>
-    `;
-  }
-  result.innerHTML = message;
-
   // For displaying checked items
   const checkedBoxes = document.querySelectorAll('input.checklist:checked');
-
   const checkedTexts = Array.from(checkedBoxes)
                             .map(cb => {
                               const label = document.querySelector(`label[for="${cb.id}"]`);
@@ -87,6 +64,32 @@ function updateChecklistStatus() {
     googleFormAnchor.href = googleFormURL;
     whatsappFormAnchor.href = whatsappFormURL;
   }
+
+  const result = document.getElementById('checklist-result');
+  const group1Count = document.querySelectorAll('input.checklist-group1:checked').length;
+  const group2Count = document.querySelectorAll('input.checklist-group2:checked').length;
+  const group3Count = document.querySelectorAll('input.checklist-group3:checked').length;
+  const group4Count = document.querySelectorAll('input.checklist-group4:checked').length;
+
+  // For displaying result
+  let message = `
+    <ol>
+      <li><span style="color: green;">請繼續保持親子運動。</span></li>
+    </ol>
+  `;
+  if (group1Count >= 1 || group2Count >= 1 || group3Count >= 1 || group4Count >= 2) {
+    let url = "https://wa.me/85263578708?text=你好，我想了解有關書包與脊椎健康的首診評估。";
+    if (checkedTexts.length > 0) {
+      url = url + "%0A%0A以下是勾選的居家檢查項目：%0A" + checkedTexts.join("%0A");
+    }
+    message = `
+      <ol>
+        <li><span style="color: blue;">請繼續保持親子運動。</span></li>
+        <li><span style="color: blue;">孩子可能存在姿勢問題。</span><a href="${url}" rel="noopener" target="_blank"><span> [按此預約邱忠榮物理治療首診評估] <i class="fab fa-whatsapp whatsapp-icon"></i></span> </a></li>
+      </ol>
+    `;
+  }
+  result.innerHTML = message;
 }
 
 // Attach event listener to all checkboxes

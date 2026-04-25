@@ -476,7 +476,7 @@ gcards:
 
 如您有 Google 帳號，歡迎使用此 <a id="google-form" href="https://docs.google.com/forms/d/e/1FAIpQLSeLdHPotvxvoZuyoBtYW01xpRsatgTojk13N9TXKvPooHQIiQ/viewform" rel="noopener" target="_blank" aria-label="Google Form">Google Form</a> 提交評估所需資料。
 
-您亦可以通過<a id="whatsapp-form" href="https://wa.me/85263578708?text=你好，我想找邱忠榮物理治療師做線上書包初步評估。" rel="noopener" target="_blank" aria-label="Whatsapp">Whatsapp</a>獲得評估表格並提交所需資料。
+您亦可以通過<a id="whatsapp-form" href="https://wa.me/85263578708?text=你好，我想找邱忠榮物理治療師做線上書包與脊椎健康初步評估。" rel="noopener" target="_blank" aria-label="Whatsapp">Whatsapp</a>獲得評估表格並提交所需資料。
 
 ## 相關網頁
 
