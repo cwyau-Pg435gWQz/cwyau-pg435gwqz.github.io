@@ -457,7 +457,7 @@ gcards:
 <div id="checklist-result"></div>
 
 <div id="checked-items-area" class="checked-items-container">
-  <div id="checked-items-text-header">您可複製以下已勾選的情況，以便在使用線上評估表格時貼上。</div>
+  <div id="checked-items-text-header">如您使用線上評估，已勾選的項目將自動轉移至評估表格，您也可複製備用。</div>
   <div id="checked-items-text"></div>
   <button id="checked-items-copy-btn">
     <i class="fa-regular fa-copy"></i><span> 複製</span>
@@ -474,9 +474,9 @@ gcards:
 
 ### 「邱忠榮物理治療師線上書包初步評估」
 
-如您有 Google 帳號，歡迎使用此 {% include custom/ext_link url="https://forms.gle/YiGjucWmZxit7VgU6" text="Google Form" %} 提交評估所需資料。
+如您有 Google 帳號，歡迎使用此 <a id="google-form" href="https://docs.google.com/forms/d/e/1FAIpQLSeLdHPotvxvoZuyoBtYW01xpRsatgTojk13N9TXKvPooHQIiQ/viewform" rel="noopener" target="_blank" aria-label="Google Form">Google Form</a> 提交評估所需資料。
 
-您亦可以通過{% include custom/ext_link url="https://wa.me/85263578708?text=你好，我想找邱忠榮物理治療師做線上書包初步評估。" text=" Whatsapp 聯絡邱忠榮物理治療師" %}以提交所需資料。
+您亦可以通過<a id="whatsapp-form" href="https://wa.me/85263578708?text=你好，我想找邱忠榮物理治療師做線上書包初步評估。" rel="noopener" target="_blank" aria-label="Whatsapp">Whatsapp</a>獲得評估表格並提交所需資料。
 
 ## 相關網頁
 

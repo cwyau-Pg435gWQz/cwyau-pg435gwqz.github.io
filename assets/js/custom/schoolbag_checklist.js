@@ -1,7 +1,10 @@
-
 const checkedItemsArea = document.getElementById('checked-items-area');
 const copyBtn = document.getElementById('checked-items-copy-btn');
 const checkedItemsText = document.getElementById('checked-items-text');
+const googleFormAnchor = document.getElementById('google-form');
+const googleFormURL = googleFormAnchor.href;
+const whatsappFormAnchor = document.getElementById('whatsapp-form');
+const whatsappFormURL = whatsappFormAnchor.href;
 
 copyBtn.addEventListener('click', () => {
     const textToCopy = checkedItemsText.innerText;
@@ -23,7 +26,6 @@ copyBtn.addEventListener('click', () => {
         });
     }
 
-  
   navigator.clipboard.writeText();
 });
 
@@ -73,11 +75,17 @@ function updateChecklistStatus() {
                             });
 
   if (checkedTexts.length > 0) {
-    checkedItemsText.innerText = checkedTexts.join('\n');
+    checkedItemsText.innerText = checkedTexts.join("\n");
     checkedItemsArea.style.display = "block";
+    const query = Array.from(checkedTexts).map(t => {return "entry.1196993608=" + t;});
+    googleFormAnchor.href = googleFormURL + "?" + query.join("&");
+    whatsappFormAnchor.href = whatsappFormURL + "%0A%0A以下是勾選的居家檢查項目：%0A" + checkedTexts.join("%0A");
+
   } else {
     checkedItemsText.innerText = "";
     checkedItemsArea.style.display = "none";
+    googleFormAnchor.href = googleFormURL;
+    whatsappFormAnchor.href = whatsappFormURL;
   }
 }
 
