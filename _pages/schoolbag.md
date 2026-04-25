@@ -6,7 +6,7 @@ search: false
 layout: simple_single
 json_ld_list:
   - json_ld/person_cwyau_base.json
-title: "書包重量與脊椎健康：物理治療師10大護脊貼士及居家評估 | 物理治療專題 | 書包 | 兒童脊椎側彎 | 圓肩駝背 | 骨盆前傾 | 書包減壓"
+title: "書包重量與脊椎健康：物理治療師10大護脊貼士及居家評估 | 物理治療專題 | 書包 | 兒童脊椎側彎 | 圓肩駝背 | 骨盆前傾 | 書包減壓 | 脊椎健康 | 脊骨健康"
 description: "擔心子女書包過重導致駝背、腰痛？註冊物理治療師邱忠榮分享10大護脊貼士、10招親子護脊運動及3分鐘居家姿勢檢查。立即計算書包重量，守護孩子脊椎成長！"
 gcards:
   - title: 小橋過山車
@@ -455,6 +455,14 @@ gcards:
 **結果：**
 
 <div id="checklist-result"></div>
+
+<div id="checked-items-area" class="checked-items-container">
+  <div id="checked-items-text-header">您可複製以下已勾選的情況，以便在使用線上評估表格時貼上。</div>
+  <div id="checked-items-text"></div>
+  <button id="checked-items-copy-btn">
+    <i class="fa-regular fa-copy"></i><span> 複製</span>
+  </button>
+</div>
 
 ### 書包重量計算器
 

@@ -1,3 +1,32 @@
+
+const checkedItemsArea = document.getElementById('checked-items-area');
+const copyBtn = document.getElementById('checked-items-copy-btn');
+const checkedItemsText = document.getElementById('checked-items-text');
+
+copyBtn.addEventListener('click', () => {
+    const textToCopy = checkedItemsText.innerText;
+
+    if (textToCopy) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Success Feedback
+            const btnIcon = copyBtn.querySelector('i');
+            const btnText = copyBtn.querySelector('span');
+            const original_btnText = btnText.textContent;
+
+            btnIcon.className = 'fa-solid fa-check';
+            btnText.textContent = ' 已複製!';
+
+            setTimeout(() => {
+                btnIcon.className = 'fa-regular fa-copy';
+                btnText.textContent = original_btnText;
+            }, 2000);
+        });
+    }
+
+  
+  navigator.clipboard.writeText();
+});
+
 function validateNumericInput(input) {
   // 1. Remove any character that isn't a digit or a dot
   let value = input.value.replace(/[^0-9.]/g, '');
@@ -18,6 +47,7 @@ function updateChecklistStatus() {
   const group3Count = document.querySelectorAll('input.checklist-group3:checked').length;
   const group4Count = document.querySelectorAll('input.checklist-group4:checked').length;
 
+  // For displaying result
   let message = `
     <ol>
       <li><span style="color: green;">請繼續保持親子運動。</span></li>
@@ -32,6 +62,23 @@ function updateChecklistStatus() {
     `;
   }
   result.innerHTML = message;
+
+  // For displaying checked items
+  const checkedBoxes = document.querySelectorAll('input.checklist:checked');
+
+  const checkedTexts = Array.from(checkedBoxes)
+                            .map(cb => {
+                              const label = document.querySelector(`label[for="${cb.id}"]`);
+                              return label ? label.textContent.trim() : "";
+                            });
+
+  if (checkedTexts.length > 0) {
+    checkedItemsText.innerText = checkedTexts.join('\n');
+    checkedItemsArea.style.display = "block";
+  } else {
+    checkedItemsText.innerText = "";
+    checkedItemsArea.style.display = "none";
+  }
 }
 
 // Attach event listener to all checkboxes
@@ -72,4 +119,3 @@ document.querySelectorAll('.checklist-group10').forEach(box => {
 
 // Run once on load
 updateWeightStatus();
-
