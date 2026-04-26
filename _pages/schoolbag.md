@@ -476,7 +476,8 @@ gcards:
 
 3. 姿勢穩定度測試
 <br><img src="/assets/images/schoolbag/PIC7.webp" style="max-width:200px" alt="姿勢穩定度測試"><br>
-  - 示範影片 : 更新中
+  - 示範影片
+{% include custom/youtube_video id="yic-WmX-lG8" title="姿勢穩定(核心肌肉)測試 | YouTube 影片" %}
   - 觀察點：將雙臂向前平舉 90 度，手掌朝下30秒
   - 檢查內容：
     <br>{% include custom/checklist type="checkbox" group_id=3 item_id=1 text="上身明顯後傾（用來抵銷手臂重量）？" %}
