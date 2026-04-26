@@ -43,12 +43,17 @@
   font-size: 2.5rem; background: none; border: none; cursor: pointer;
 }
 
+.itbl-pane-container {
+  margin-top: 50px;
+}
+
 /* Internal Table Layout */
 .itbl-pane-row {
   display: flex;
   gap: 20px;
   width: 100%;
   align-items: flex-start; /* Keeps titles at the top */
+  margin: 20px 0px;
 
   @media (max-width: 768px) {
     flex-direction: column; /* Stack on mobile */

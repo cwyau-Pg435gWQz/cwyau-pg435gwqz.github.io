@@ -20,8 +20,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 小橋過山車 - 親子核心肌肉運動 (強化臀部肌肉、穩定骨盆核心)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: hOHYzws9JC0
+               title: 小橋過山車 - 親子核心肌肉運動 (強化臀部肌肉、穩定骨盆核心) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -49,8 +53,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 空中單車賽 - 親子核心肌肉運動 (強化核心腰部肌肉、鍛鍊下肢協調)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: qYmjIbb5jIk
+               title: 空中單車賽 - 親子核心肌肉運動 (強化核心腰部肌肉、鍛鍊下肢協調) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -78,8 +86,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 枕頭防衛戰 - 親子核心肌肉運動 (強化核心,大腿和臀部肌肉)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: PLp6kGRN54Y
+               title: 枕頭防衛戰 - 親子核心肌肉運動 (強化核心,大腿和臀部肌肉) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -107,8 +119,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 靈巧小兔子 - 親子核心肌肉運動(強化上肢支撐、核心腰部肌肉與下肢爆發力)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: IULtrrU5SEU
+               title: 靈巧小兔子 - 親子核心肌肉運動(強化上肢支撐、核心腰部肌肉與下肢爆發力) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -136,8 +152,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 雙腿抬起推球 - 親子核心肌肉運動 (強化背部深層肌群、改善圓肩駝背)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: tUJ4a0fdEVg
+               title: 雙腿抬起推球 - 親子核心肌肉運動 (強化背部深層肌群、改善圓肩駝背) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -165,8 +185,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 空中踢樂樂 - 親子核心肌肉運動 (強化下腹核心、提升髖部靈活性)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: 7HGlr-YJ9dY
+               title: 空中踢樂樂 - 親子核心肌肉運動 (強化下腹核心、提升髖部靈活性) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -194,8 +218,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 平板大擊掌 - 親子核心肌肉運動 (強化核心腰部肌肉、提升肩膊穩定性)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: a8Bxek538So
+               title: 平板大擊掌 - 親子核心肌肉運動 (強化核心腰部肌肉、提升肩膊穩定性) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -222,8 +250,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 貓牛式 - 親子核心肌肉運動 (靈活脊椎、放鬆背部緊繃)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: RmHfgbhAMuY
+               title: 貓牛式 - 親子核心肌肉運動 (靈活脊椎、放鬆背部緊繃) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -251,8 +283,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 小熊爬行大險 - 親子核心肌肉運動 (強化全身穩定力、強化肩膊與核心肌肉)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: AkSoUHk9gT4
+               title: 小熊爬行大險 - 親子核心肌肉運動 (強化全身穩定力、強化肩膊與核心肌肉) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
@@ -279,8 +315,12 @@ gcards:
       name: interactive_table
       rows:
         - cols:
+           - title: 側身小支架 - 親子核心肌肉運動 (強化側腹核心、穩定脊椎平衡與核心肌肉)
+        - cols:
            - title: 影片
-           - descr: 更新中
+           - youtube:
+               id: 1OMY32Tag0M
+               title: 側身小支架 - 親子核心肌肉運動 (強化側腹核心、穩定脊椎平衡與核心肌肉) | YouTube 影片
         - cols:
            - title: 動作重點
            - descr: |
