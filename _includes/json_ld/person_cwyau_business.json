@@ -27,7 +27,7 @@
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "河內道5-7號10樓1001室 | Room 1001, 10/F, 5-7 Hanoi Road",
-    "addressLocality": "Tsim Sha Tsui",
+    "addressLocality": "尖沙咀 | Tsim Sha Tsui",
     "addressRegion": "Kowloon",
     "addressCountry": "HK"
   },
