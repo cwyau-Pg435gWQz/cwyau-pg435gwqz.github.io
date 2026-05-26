@@ -63,6 +63,8 @@ layout: default
                     {%- else -%}
                       {%- include custom/int_link url=item.url text=item.text -%}
                     {%- endif -%}
+                  {%- else -%}
+                    {{ item.text }}
                   {%- endif -%}
                 </div>
               {% endfor %}
