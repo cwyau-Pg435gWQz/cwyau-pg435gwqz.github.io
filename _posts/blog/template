@@ -38,7 +38,7 @@ seo_tag_line: (註: 要改) abc | def | ghi ...
 ***文字*** (註: 斜+粗體)
 
 (註: 以下一行即為插入一條用字做的LINK )
-{* include custom/ext_link url="{網址放呢度}" text="{條LINK D 字放呢度}" %}
+{% include custom/ext_link url="{網址放呢度}" text="{條LINK D 字放呢度}" %}
 
 (註: 以下一行即為插入YOUTUBE, 要改id, 改title )
 {% include custom/youtube_video id="{id 放響度}" title="{title 放響度} | YouTube 影片" %}
