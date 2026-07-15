@@ -1,0 +1,131 @@
+{% comment %}
+  GCARDS
+  Author: Raymond Kwok
+  Description: Download Table that requires inputs.
+  Input:
+    @param {string} items - List of items.
+
+  =============================================================================
+  FRONT MATTER DEFINITION
+  -----------------------------------------------------------------------------
+  @description
+
+  @param {array} items - [REQUIRED]
+    @param {string} name - [REQUIRED] Display name.
+    @param {string} file - [REQUIRED] File name.
+  =============================================================================
+{% endcomment %}
+
+<div class="download-table-container">
+
+  <div class="download-table-user-info-container">
+    <p style="margin-bottom: 15px; font-size: 0.9em; color: #666;">請提供以下資料然後下載所需檔案：</p>
+
+    <div class="download-table-user-info-form">
+      <div class="download-table-user-info-form-entry">
+        <label class="download-table-user-info-label" for="user-name">稱謂 *</label>
+        <input class="download-table-user-info-input" id="user-name" type="text" placeholder="">
+      </div>
+      <div class="download-table-user-info-form-entry">
+        <label class="download-table-user-info-label" for="user-phone">WhatsApp 號碼 *</label>
+        <input class="download-table-user-info-input" id="user-phone" type="tel" placeholder="+852-6123-4567">
+      </div>
+    </div>
+  </div>
+
+  <table class="download-table">
+    <tbody>
+      {% for item in include.items %}
+      <tr style="border-bottom: 1px solid #ddd;">
+        <td style="padding: 10px;">{{ item.name }}</td>
+        <td style="padding: 10px; text-align: right;">
+          <button
+            type="button"
+            class="download-table-btn"
+            data-filename="{{ item.file | escape }}"
+            data-displayname="{{ item.name | escape }}"
+            disabled
+          >
+            下載
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const GOOGLE_FORM_ACTION_URL = "https://google.com";
+    const ENTRY_ID_NAME = "entry.1111111111";
+    const ENTRY_ID_PHONE = "entry.2222222222";
+    const ENTRY_ID_FILENAME = "entry.3333333333";
+
+    const nameInput = document.getElementById('user-name');
+    const phoneInput = document.getElementById('user-phone');
+    const downloadButtons = document.querySelectorAll('.download-table-btn');
+
+    function validateInputs() {
+      const isNameValid = nameInput.value.trim().length > 0;
+      const isPhoneValid = phoneInput.value.trim().length > 0;
+
+      downloadButtons.forEach(btn => {
+        btn.disabled = !(isNameValid && isPhoneValid);
+      });
+    }
+
+    /* Listen for typing events to instantly check validation */
+    nameInput.addEventListener('input', validateInputs);
+    phoneInput.addEventListener('input', validateInputs);
+
+    /* Handle Download & Google Form Submission (Option B) */
+    downloadButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const fileName = this.getAttribute('data-filename');
+        const displayName = this.getAttribute('data-displayname');
+        const currentButton = this;
+
+        /* Temporary anti-double-click protection */
+        currentButton.disabled = true;
+        const originalText = currentButton.textContent;
+        currentButton.textContent = "Processing...";
+
+        /* Prepare data payload for Google Forms */
+        const formData = new FormData();
+        formData.append(ENTRY_ID_NAME, nameInput.value.trim());
+        formData.append(ENTRY_ID_PHONE, phoneInput.value.trim());
+        formData.append(ENTRY_ID_FILENAME, displayName);
+
+        /* Send data to Google Forms in the background */
+        fetch(GOOGLE_FORM_ACTION_URL, {
+          method: "POST",
+          mode: "no-cors", /* Crucial for static sites bypassing Google's CORS restrictions */
+          body: formData
+        })
+        .then(() => {
+          /* Trigger the file download seamlessly */
+          const fileUrl = `/assets/download/${fileName}`;
+          const link = document.createElement('a');
+          link.href = fileUrl;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        })
+        .catch((error) => {
+          console.error("Submission error:", error);
+          alert("An error occurred during submission. Please try again.");
+        })
+        .finally(() => {
+          /* Restore button state after 1.5 seconds */
+          setTimeout(() => {
+            currentButton.textContent = originalText;
+            validateInputs(); /* Re-evaluate fields to make sure it keeps the correct state */
+          }, 1500);
+        });
+      });
+    });
+
+  });
+</script>

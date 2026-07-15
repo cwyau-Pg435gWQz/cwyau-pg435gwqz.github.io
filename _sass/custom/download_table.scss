@@ -1,0 +1,57 @@
+.download-table-user-info-container {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  // background-color: #f9f9f9;
+}
+
+.download-table-user-info-form {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.download-table-user-info-form-entry {
+  flex: 1;
+  min-width: 200px;
+}
+
+.download-table-user-info-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.download-table-user-info-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.download-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+
+.download-table-btn {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+.download-table-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+.download-table-btn:disabled {
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

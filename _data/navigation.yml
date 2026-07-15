@@ -9,6 +9,8 @@ main:
     url: /therapy/
   - title: "物理治療項目"
     url: /treatment/
+  - title: "下載區"
+    url: /download/
   - title: "健康資訊"
     url: /blog/
 
