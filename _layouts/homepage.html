@@ -40,8 +40,17 @@ layout: default
       </section>
 
       <!-- News + Latest Articles + Latest YouTube -->
-      <section id="latest" class="bento-grid-container homepage-bg-pattern-shapes">
+      <section id="latest" class="bento-grid-container homepage-bg-pattern-shapes" style="padding: 10px;">
         <div class="bento-grid" style="--vsize:3;--hsize:4">
+
+          <div id="latest-youtube" class="bento-grid-tile" style="--vspan:2;--hspan:3;">
+            <div class="content">
+              {% include custom/youtube_channel id="UU-XCTx5zZriu7Gu-jb92gIA" title="YouTube 頻道最新影片" use_youtube_lite=false %}
+            </div>
+            <div class="footnote" style="font-size: small">
+              {% include custom/ext_link url="https://www.youtube.com/@物理治療師邱忠榮" html="YouTube 頻道<i class=\"fa-solid fa-arrow-right\"></i>" text="前往物理治療師邱忠榮YouTube 頻道" %}
+            </div>
+          </div>
 
           <div id="latest-news" class="bento-grid-tile" style="--vspan:3;">
             <div class="title">最新消息</div>
@@ -79,14 +88,6 @@ layout: default
             </div>
           {% endfor %}
 
-          <div id="latest-youtube" class="bento-grid-tile" style="--vspan:2;--hspan:3;">
-            <div class="content">
-              {% include custom/youtube_channel id="UU-XCTx5zZriu7Gu-jb92gIA" title="YouTube 頻道最新影片" use_youtube_lite=false %}
-            </div>
-            <div class="footnote" style="font-size: small">
-              {% include custom/ext_link url="https://www.youtube.com/@物理治療師邱忠榮" html="YouTube 頻道<i class=\"fa-solid fa-arrow-right\"></i>" text="前往物理治療師邱忠榮YouTube 頻道" %}
-            </div>
-          </div>
         </div>
       </section>
 
