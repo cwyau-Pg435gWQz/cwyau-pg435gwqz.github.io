@@ -1,0 +1,16 @@
+# The news items shown on the homepage, ordered as listed.
+news:
+  # Example:
+  # - date: 18/02/2026
+  #   text: 2月份網上講座-烏龜頸與枕頭
+  #   url: https://www.youtube.com/watch?v=x38r7UYmwXQ&t=1s
+  # Explanation:
+  #   Provide the `date` and `text` of the news. `url` is optional.
+  - date: 08/05/2026
+    text: 5月份書店講座-改變烏龜頸
+  - date: 30/04/2026
+    text: 4月份義務小學講座-背包對學生脊椎健康
+    url: https://youtube.com/shorts/o1B2barbc0E
+  - date: 18/02/2026
+    text: 2月份網上講座-烏龜頸與枕頭
+    url: https://www.youtube.com/watch?v=x38r7UYmwXQ&t=1s

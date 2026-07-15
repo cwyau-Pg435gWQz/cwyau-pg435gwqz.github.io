@@ -55,7 +55,7 @@ layout: default
           <div id="latest-news" class="bento-grid-tile" style="--vspan:3;">
             <div class="title">最新消息</div>
             <div class="content scroll">
-              {% for item in page.news %}
+              {% for item in site.data.content.news %}
                 <div class="news-item">
                   {% if item.date %}<div class="date">{{ item.date }}</div>{% endif %}
                   {%- if item.url -%}
