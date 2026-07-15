@@ -6,8 +6,8 @@ header:
   overlay_color: "#333"
   overlay_image: "/assets/images/banner/banner_consultation-2048.webp"
   overlay_image_md: "/assets/images/banner/banner_consultation-1024.webp"
-  overlay_image_alt: "物理治療流程"
-  title: "物理治療流程"
+  overlay_image_alt: "物理治療流程及收費詳情"
+  title: "物理治療流程及收費詳情"
 json_ld_list:
   - json_ld/person_cwyau_base.json
 title: "物理治療流程及收費詳情 | 一對一專業問診、臨床評估與針對性治療"
