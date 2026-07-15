@@ -10,7 +10,7 @@ header:
   title: "物理治療流程"
 json_ld_list:
   - json_ld/person_cwyau_base.json
-title: "物理治療流程 | 一對一專業問診、臨床評估與針對性治療"
+title: "物理治療流程及收費詳情 | 一對一專業問診、臨床評估與針對性治療"
 description: "邱忠榮物理治療師提供透明的物理治療流程：從一對一詳細問診、全身關鍵部位（頸、腰、肩、膝、足踝）的臨床評估，到擬定針對性治療方案，確保每位患者都能獲得最精準的診斷與個人化康復建議。我們位於尖沙咀地鐵站旁，立即致電或 WhatsApp +852 6357 8708 預約諮詢。"
 gcards:
   - title: 問診
@@ -69,4 +69,35 @@ gcards:
       url: /assets/images/therapy_procedure/treatment.webp
       alt: 邱忠榮物理治療師正在進行針對性治療
 ---
+
+# 收費詳情
+
+<div class="therapy-grid-tile" style="padding:10px">
+  <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+    <tr>
+      <td rowspan="2" style="font-weight: bold; padding: 10px; vertical-align: middle;">
+        物理治療收費 (1小時)
+      </td>
+      <td style="padding: 10px;">初診全面評估（ 包含診斷與首次治療）</td>
+      <td style="padding: 10px; text-align: right;">$500</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px;">後續單次治療</td>
+      <td style="padding: 10px; text-align: right;">$500</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding: 10px; font-weight: bold;">度身訂造鞋墊</td>
+      <td style="padding: 10px; text-align: right;">$1400</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding: 10px; font-weight: bold;">一對一上門物理治療</td>
+      <td style="padding: 10px; text-align: right;">歡迎查詢</td>
+    </tr>
+  </table>
+</div>
+
+<p></p>
+
+# 治療流程
+
 {% include custom/gcards id="gcards" n_cols=1 %}

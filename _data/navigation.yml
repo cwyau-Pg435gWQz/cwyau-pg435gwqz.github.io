@@ -5,7 +5,7 @@ main:
     url: /schoolbag/
   - title: "中心地址"
     url: /contact/
-  - title: "物理治療流程"
+  - title: "物理治療流程及收費詳情"
     url: /therapy/
   - title: "物理治療項目"
     url: /treatment/
