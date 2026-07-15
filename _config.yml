@@ -136,6 +136,9 @@ author:
     - label: "WhatsApp"
       icon: "fa-brands fa-whatsapp"
       url: "https://wa.me/85263578708"
+    - label: "Calendly"
+      icon: "fas fa-calendar-check"
+      url: "https://calendly.com/mark20002000/30min"
 
 footer:
   links:

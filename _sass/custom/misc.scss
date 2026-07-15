@@ -227,7 +227,7 @@ a img {
   background-color: #237341;
   color: #FFF !important;
   border-radius: 50px;
-  padding: 20px 30px;
+  padding: 10px 20px;
   box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
   z-index: 9999;
   display: flex;
@@ -250,13 +250,6 @@ a img {
 
 .whatsapp-icon {
   font-size: 1em;
-}
-
-@media (max-width: $md-width) {
-  .whatsapp-float {
-    padding: 10px 20px;
-    border-radius: 30px;
-  }
 }
 /* Social links in fotter */
 .social-links-container {
