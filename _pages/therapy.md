@@ -76,7 +76,7 @@ gcards:
   <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
     <tr>
       <td rowspan="2" style="font-weight: bold; padding: 10px; vertical-align: middle;">
-        物理治療收費 (1小時)
+        物理治療收費 
       </td>
       <td style="padding: 10px;">初診全面評估（ 包含診斷與首次治療）</td>
       <td style="padding: 10px; text-align: right;">$500</td>
