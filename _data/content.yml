@@ -27,3 +27,80 @@ download_area:
     file: "烏龜頸筆記.pdf"
   - name: "完美體態講座筆記"
     file: "完美體態講座筆記.pdf"
+
+# ==============================================================================
+# PAGINATED REVIEW CAROUSEL CONFIGURATION
+# ==============================================================================
+# Use this block to configure structural sorting, display counts, and dynamic 
+# viewport sliding pagination blocks for customer review panels.
+# ==============================================================================
+
+reviews:
+  - type: "text"
+    displayName: 'Ella Chan'
+    starRating: 5
+    comment: |
+      物理治療師邱忠榮先生好細心和有責任感，又親切，全程一對一治療，親身做每個治療，不假手於人。有為我複雜的情況做全面評估，現時進度良好，值得一讚！環境亦潔淨舒適。
+
+  - type: "text"
+    displayName: 'Janet Lin'
+    starRating: 5
+    comment: |
+      Mark專業細心，經過數次治療後，我的媽媽手有明顯進步～整體體驗非常良好，環境乾淨舒適，設備新淨，十分滿意，值得推薦～
+
+  - type: "text"
+    displayName: 'Anny Wu'
+    starRating: 5
+    comment: |
+      The location is extremely convenient! I highly recommend Mark Yau if you are looking for a physiotherapist. He conducted a thorough assessment of my pain area, applied different and appropriate treatments, and closely monitored my recovery progress. His attentive approach made a difference!"
+
+  - type: "text"
+    displayName: 'Wong Roy'
+    starRating: 5
+    comment: |
+      打匹克球打到手臂疼痛，經介紹認識邱醫師。整個過程邱醫師講解清晰，親力親為。比較其他中心會以助手代勞，值得一讚。中心有較多的治療儀器，睇左2次已見效果"
+
+  - type: "image"
+    image_file_name: "review_01.jpg"
+    width: 739
+    height: 1600
+    seo_text: |
+      [對方] 下午 7:39
+      今晚約你嘅新鞋墊；去玩深蹲；玩咗兩款嘅深蹲；之前膝頭前面你話係啲筋勞損；今晚完全消失！！
+      
+      仲發覺自己嘅肌力好好；因為個鞋墊頂住我腳底；我感覺到肌肉真係可以完全去發揮佢嘅肌力👍
+      
+      [對方] 下午 7:43
+      係玩緊我之前覺得都已經好盡嘅重量！今晚覺得好有空間再去提升力量😁 Thanks
+      
+      [我] 下午 8:52
+      👍 (大拇指貼圖)
+      
+      [我] 下午 8:53
+      好希望個鞋墊可以幫到你更多，令你發揮得更好
+      
+      [對方] 下午 8:55
+      做深蹲就真係幫到好多；冇冤嘅感覺！
+      但係去到當我玩坐喺度嗰陣時踢腳；呢個動作就感覺到有少少仍然係冤
+      
+      [我] 已編輯 下午 8:55
+      不過記住吾好開心得滯，加 loading 太快，小心，吾係著住佢會無敵
+
+  - type: "image"
+    image_file_name: "review_02.jpg"
+    width: 1158
+    height: 561
+    seo_text: |
+      這張圖片是一段對話截圖，以下是完整的文字內容：
+      
+      對方：
+      
+      好啊🥹 謝謝💚 下午 9:19
+      
+      媽媽覺得你好有心機幫佢整，佢都好開心，好感激🙌🏼🙌🏼 
+      下午 9:41
+      
+      
+      自己：
+      
+      最緊要幫到佢 已編輯 下午 9:42

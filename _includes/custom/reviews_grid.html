@@ -1,0 +1,440 @@
+{% comment %}
+  BENTO REVIEWS COMPONENT
+  Author: Raymond Kwok
+  Description: Renders a dynamic, accessible Bento Grid for customer reviews.
+  Supports a fixed 100vh layout with slider pagination.
+  Input:
+    @param {number} hsize - Number of horizontal units (default: 4)
+    @param {number} vsize - Number of vertical units (default: 20)
+    @param {string} google_business_profile_link - For the "More Reviews"
+                                                   button
+    @param {string} sorting - One of {'as_listed', 'random', 'image-first',
+                              'text-first'}. (default: 'as_listed')
+    @param {boolean} packed - If true, latter image is moved forward to fill
+                              empty space. (default: false)
+
+  =============================================================================
+  FRONT MATTER DEFINITION
+  -----------------------------------------------------------------------------
+  @description
+
+  @param {string} type - [REQUIRED] 'text' or 'image'.
+  @param {string} displayName - [REQUIRED]. For type = 'text' only.
+  @param {number} starRating - [REQUIRED]. For type = 'text' only.
+  @param {string} comment - [REQUIRED]. For type = 'text' only.
+  @param {string} image_file_name - [REQUIRED]. The file should be located in
+                                    assets/reviews. For type = 'image' only.
+  @param {number} width - [REQUIRED]. In pixels. For type = 'image' only.
+  @param {number} height - [REQUIRED]. In pixels. For type = 'image' only.
+  @param {string} seo_text - [REQUIRED]. Used for `alt` and `aria-label`.
+                             For type = 'image' only.
+
+  =============================================================================
+{% endcomment %}
+
+{%- assign reviews_data = site.data.content.reviews -%}
+{%- assign hsize = include.hsize | default: 4 -%}
+{%- assign vsize = include.vsize | default: 20 -%}
+{%- assign sorting = include.sorting | default: "as_listed" -%}
+{%- assign packed = include.packed | default: false -%}
+{%- assign slider_mode = include.slider_mode | default: true -%}
+{%- assign google_link = include.google_business_profile_link | default: "#" -%}
+
+<section class="reviews-section {% if slider_mode %}fit-to-page{% endif %}"
+         id="bento-reviews-root"
+         data-hsize="{{ hsize }}"
+         data-vsize="{{ vsize }}"
+         data-sorting="{{ sorting }}"
+         data-slider-mode="{{ slider_mode }}"
+         data-packed="{{ packed }}" >
+
+  <!-- 1. Section Title -->
+  <header class="reviews-header">
+    <div class="reviews-title">客戶評價</div>
+  </header>
+
+  <!-- 2. The Bento Grid Wrapper -->
+  <div class="reviews-grid-viewport">
+    <div class="reviews-grid-track bento-grid" style="--hsize: {{ hsize }}; --vsize: {{ vsize }};">
+      {% for review in reviews_data %}
+        <article class="bento-grid-tile review-tile"
+                 data-type="{{ review.type }}"
+                 {% if review.type == 'image' %}
+                   data-img-width="{{ review.width }}"
+                   data-img-height="{{ review.height }}"
+                 {% endif %}>
+
+          {% if review.type == 'text' %}
+            <!-- Text Review Content -->
+            <div class="review-tile-header">
+              <span class="review-author">{{ review.displayName | escape }}</span>
+              <div class="review-rating" aria-label="{{ review.starRating }} out of 5 stars">
+                {% for i in (1..5) %}
+                  <svg class="star-icon {% if i <= review.starRating %}filled{% endif %}" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="review-tile-body scroll">
+              <p class="review-comment">{{ review.comment | strip_html | newline_to_br }}</p>
+            </div>
+
+            {% comment %}
+            <div class="review-tile-footer">
+              <span class="review-watermark">
+                <svg class="google-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                </svg>
+                Reviewed on Google
+              </span>
+            </div>
+            {% endcomment %}
+
+          {% else if review.type == 'image' %}
+            <!-- Image Review Content -->
+            <div class="review-image-container">
+              <img class="review-image"
+                   src="assets/reviews/{{ review.image_file_name }}"
+                   alt="{{ review.seo_text | escape }}"
+                   aria-label="{{ review.seo_text | escape }}"
+                   loading="lazy">
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 3. Slider Controls (Only visible/active if slider_mode is true) -->
+  {% if slider_mode %}
+    <div class="reviews-controls" aria-label="Review pagination">
+      <button class="control-btn prev-btn" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
+      <div class="control-dots" role="tablist" aria-label="Select page"></div>
+      <button class="control-btn next-btn" aria-label="Next page">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+      </button>
+    </div>
+  {% endif %}
+
+  <!-- 4. Call To Action Footer Link -->
+  <footer class="reviews-footer">
+    <a href="{{ google_link }}" class="btn-more-reviews" target="_blank" rel="noopener noreferrer">
+      更多評價
+    </a>
+  </footer>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const gridGap = 10; /* Matches CSS grid gap rule */
+    const desktopBreakpoint = 768; /* Matches $md-width SCSS variable */
+
+    const root = document.getElementById("bento-reviews-root");
+    if (!root) return;
+
+    /* Retrieve configurations passed from Liquid attributes */
+    const config = {
+      hsize: parseInt(root.dataset.hsize, 10) || 4,
+      vsize: parseInt(root.dataset.vsize, 10) || 20,
+      sorting: root.dataset.sorting || "as_listed",
+      sliderMode: root.dataset.sliderMode === "true",
+      packed: root.dataset.packed == "true"
+    };
+
+    const track = root.querySelector(".reviews-grid-track");
+    const originalTiles = Array.from(root.querySelectorAll(".review-tile"));
+    const controls = root.querySelector(".reviews-controls");
+    const dotsContainer = root.querySelector(".control-dots");
+    const prevBtn = root.querySelector(".prev-btn");
+    const nextBtn = root.querySelector(".next-btn");
+
+    const isDesktop = window.innerWidth >= desktopBreakpoint;
+    if (!isDesktop) {
+      config.hsize = 1;
+      track.style.setProperty('--hsize', 1);
+    }
+
+    /* Array sorting mechanics */
+    function sortTiles(tiles, strategy) {
+      const list = [...tiles];
+      if (strategy === "random") {
+        /* Safe standard shuffling using index counting down to 1 */
+        let i = list.length;
+        while (i !== 0) {
+          let j = Math.floor(Math.random() * i);
+          i -= 1;
+          [list[i], list[j]] = [list[j], list[i]];
+        }
+      } else if (strategy === "image_first") {
+        list.sort((a, b) => (b.dataset.type === "image") - (a.dataset.type === "image"));
+      } else if (strategy === "text_first") {
+        list.sort((a, b) => (b.dataset.type === "text") - (a.dataset.type === "text"));
+      }
+      return list;
+    }
+
+    /* 2. Main structural orchestrator */
+    let currentPage = 0;
+    let totalPages = 1;
+
+    function renderLayout() {
+
+      /* Clear dynamic formatting configurations prior to rebuilding */
+      track.innerHTML = "";
+      track.style.transform = "translateX(0)";
+
+      /* Apply primary sorting choices */
+      const sortedTiles = sortTiles(originalTiles, config.sorting);
+      sortedTiles.forEach(tile => track.appendChild(tile));
+
+      /* Desktop logic: Grid size assessments */
+      const viewportHeight = track.parentElement.clientHeight;
+      const totalGapOverhead = gridGap * (config.vsize - 1);
+      const unitRowHeight = (viewportHeight - totalGapOverhead) / config.vsize;
+      const maxRows = config.vsize;
+      const maxCols = config.hsize;
+
+      /* Helper functions for page space management */
+      function createNewPage() {
+        return Array.from({ length: maxRows }, () => Array(maxCols).fill(false));
+      }
+
+      function isPageSpaceFree(page, startRow, endRow, startCol, endCol) {
+        if (startRow < 0 || endRow > maxRows || startRow >= endRow) return false;
+        if (startCol < 0 || endCol > maxCols || startCol >= endCol) return false;
+
+        for (let r = startRow; r < endRow; r++) {
+          const row = page[r];
+          for (let c = startCol; c < endCol; c++) {
+            if (row[c] === true) return false;
+          }
+        }
+        return true;
+      }
+
+      function setPageSpaceToTrue(page, startRow, endRow, startCol, endCol){
+        for (let r = startRow; r < endRow; r++) {
+          page[r].fill(true, startCol, endCol);
+        }
+      }
+
+      /* Monitor occupancy indexes to track bounds */
+      let pagesData = [createNewPage()];
+      let currentPageIndex = 0;
+
+      sortedTiles.forEach((tile, idx) => {
+        let hspan = 1;
+        let vspan = 1;
+
+        /* Assign spans based on content metrics */
+        if (tile.dataset.type === "image") {
+          const nativeW = parseFloat(tile.dataset.imgWidth);
+          const nativeH = parseFloat(tile.dataset.imgHeight);
+
+          /* Approximate runtime column widths via viewport allocations */
+          const approxTileWidth = track.parentElement.clientWidth / maxCols;
+          const renderedHeight = (nativeH / nativeW) * approxTileWidth;
+
+          vspan = Math.ceil((renderedHeight + gridGap) / (unitRowHeight + gridGap));
+        } else {
+          /* Measure text footprints safely via a neutral, plain layout box */
+          tile.style.visibility = "hidden";
+
+          const measurementBox = tile.cloneNode(true);
+          measurementBox.style.position = "absolute";
+          measurementBox.style.top = "-9999px";
+          measurementBox.style.left = "-9999px";
+          measurementBox.style.visibility = "hidden";
+          measurementBox.style.display = "flex";
+          measurementBox.style.flexDirection = "column";
+          measurementBox.style.boxSizing = "border-box";
+
+          /* Set matching layout column width footprint */
+          const approxTileWidth = track.parentElement.clientWidth / maxCols;
+          measurementBox.style.width = (approxTileWidth - gridGap) + "px";
+          measurementBox.style.height = "auto";
+
+          /* Ensure any cloned inner comment container allows text wrapping */
+          const innerBody = measurementBox.querySelector(".review-tile-body");
+          if (innerBody) {
+            innerBody.style.overflowY = "visible";
+            innerBody.style.height = "auto";
+            innerBody.style.flexGrow = "0";
+          }
+
+          /* Append directly to document.body to break out of the .fit-to-page trap */
+          document.body.appendChild(measurementBox);
+          const measuredHeight = measurementBox.getBoundingClientRect().height;
+          document.body.removeChild(measurementBox); /* Erase temporary node instantly */
+
+          tile.style.visibility = "visible";
+
+          /* Calculate exact vertical span allocations against pure text heights */
+          vspan = Math.ceil((measuredHeight + gridGap) / (unitRowHeight + gridGap));
+        }
+
+        /* make sure there is enough space */
+        vspan = vspan + 1;
+
+        /* Constrain spans safely inside max canvas size thresholds */
+        vspan = Math.min(Math.max(vspan, 1), maxRows);
+        tile.style.setProperty("--vspan", vspan);
+        tile.style.setProperty("--hspan", hspan);
+
+        /* Apply a strict physical height cap */
+        const targetPixelHeight = (vspan * unitRowHeight) + ((vspan - 1) * gridGap);
+        tile.style.height = targetPixelHeight + "px";
+        tile.style.maxHeight = targetPixelHeight + "px";
+
+        /* Search for space to place the tile */
+        if (config.sliderMode) {
+
+          /* Always start the search from page 0 if packed */
+          if (config.packed) {
+            currentPageIndex = 0;
+          }
+
+          let placed = false;
+          while (!placed) {
+            let currentPage = pagesData[currentPageIndex];
+
+            for (let r = 0; r < maxRows; r++) {
+              for (let c = 0; c < maxCols; c++) {
+                if (isPageSpaceFree(currentPage, r, r + vspan, c, c + hspan)) {
+                  setPageSpaceToTrue(currentPage, r, r + vspan, c, c + hspan);
+                  placed = true;
+                  break;
+                }
+              }
+              if (placed){
+                break;
+              }
+            }
+            /* If not placed, move on to the next page, and create the page if needed */
+            if (!placed) {
+              currentPageIndex += 1;
+              if (pagesData.length <= currentPageIndex) {
+                pagesData.push(createNewPage());
+              }
+            }
+          }
+          /* Save computed page identity to the node metadata parameters */
+          tile.dataset.page = currentPageIndex;
+        } else {
+          /* Infinite scrolling continuous mode: place elements inline natively */
+          tile.removeAttribute("data-page");
+        }
+      });
+
+      /* Handle slider viewport alignments */
+      if (config.sliderMode) {
+        totalPages = pagesData.length;
+        setupSliderControls();
+      } else if (controls) {
+        controls.style.display = "none";
+      }
+
+      /* Trigger visibility routine for initial page rendering step */
+      if (config.sliderMode) {
+        goToPage(0);
+      } else {
+        /* Reset standard mobile layout viewing defaults */
+        originalTiles.forEach(tile => tile.classList.add("active-page-tile"));
+      }
+
+      /* Safely remove initial transparency masks */
+      root.style.opacity = "1";
+    }
+
+    /* 4. Slider Interface Actions */
+    function setupSliderControls() {
+      if (!controls || totalPages === 1) {
+        if (controls) controls.style.display = "none";
+        return;
+      }
+      controls.style.display = "flex";
+      dotsContainer.innerHTML = "";
+
+      /* Safe pagination array construction without sequential indexing symbol clashes */
+      Array(totalPages).fill(0).forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = i === 0 ? "dot-btn active" : "dot-btn";
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+        dot.setAttribute("aria-label", "Go to page " + (i + 1));
+        dot.addEventListener("click", () => goToPage(i));
+        dotsContainer.appendChild(dot);
+      });
+      updateButtonStates();
+    }
+
+    function goToPage(pageIndex) {
+      if (0 > pageIndex || pageIndex >= totalPages) return;
+
+      /* 1. Find currently active tiles and fade them out */
+      const activeTiles = originalTiles.filter(tile => tile.classList.contains("active-page-tile"));
+
+      if (activeTiles.length > 0) {
+        activeTiles.forEach(tile => tile.classList.add("fade-out"));
+      }
+
+      /* 2. Wait for the fade-out transition to finish (250ms matches the CSS) */
+      setTimeout(() => {
+        currentPage = pageIndex;
+
+        /* Update visibility classes on elements directly */
+        originalTiles.forEach(tile => {
+          const tilePage = parseInt(tile.dataset.page, 10);
+          if (tilePage === currentPage) {
+            tile.classList.add("active-page-tile");
+            tile.classList.remove("fade-out"); /* Ensure it fades in cleanly */
+            tile.style.removeProperty("display");
+          } else {
+            tile.classList.remove("active-page-tile");
+          }
+        });
+
+        /* Reset control dot states */
+        Array.from(dotsContainer.children).forEach((dot, idx) => {
+          const isActive = idx === currentPage;
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        updateButtonStates();
+      }, activeTiles.length > 0 ? 250 : 0); /* Skip timeout on initial page load (index 0) */
+    }
+
+
+
+    function updateButtonStates() {
+      if (prevBtn) prevBtn.disabled = currentPage === 0;
+      if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", () => goToPage(currentPage - 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => goToPage(currentPage + 1));
+
+    /* Initialize and attach standard layout resize debounce monitors */
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(renderLayout, 150);
+    });
+
+    /* Run layout engine */
+    renderLayout();
+  });
+
+
+</script>

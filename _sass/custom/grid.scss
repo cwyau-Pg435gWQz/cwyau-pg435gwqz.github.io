@@ -353,3 +353,301 @@ $md-width: 768px;
 	text-decoration: none;
   }
 }
+
+/* ==========================================================================
+   BENTO REVIEWS STYLESHEET
+   ========================================================================== */
+
+$md-width: 768px;
+
+// Base initial container states
+.reviews-section {
+  opacity: 0; // Guard against initial Cumulative Layout Shift (CLS)
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 0;
+  background-color: transparent;
+  max-width: 1400px;
+}
+
+/* 1. Header Typography */
+.reviews-header {
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  justify-content: center;
+  display: flex;
+
+  .reviews-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+/* 2. Dynamic Structural Viewports */
+.reviews-grid-viewport {
+  padding: 10px 0px;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden; // Conceals secondary pagination pages safely
+  position: relative;
+}
+
+.reviews-grid-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+  // height: 100%;
+  // transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+  .fit-to-page & {
+    min-height: 0 !important; 
+    height: 100%;
+  }
+
+  @media (min-width: $md-width) {
+    grid-template-columns: repeat(var(--hsize, 4), 1fr);
+    grid-template-rows: repeat(var(--vsize, 20), minmax(0, 1fr));
+  }
+}
+
+/* 3. Review Component Core Framework */
+.review-tile {
+  @extend .bento-grid-tile;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+
+  /* FIX: Ensure visibility modifiers do not break the grid item layout block status */
+  .fit-to-page & {
+    grid-row: span var(--vspan, 1) !important;
+    grid-column: span var(--hspan, 1) !important;
+    height: 100% !important;
+
+    /* Toggle display safely using grid cell box rules instead of display: flex overrides */
+    display: none !important; 
+
+    &.active-page-tile {
+      display: flex !important; /* Restores your tile structure layout safely */
+    }
+  }
+
+  @media (min-width: $md-width) {
+    &:not(.active-page-tile) {
+      grid-row: span var(--vspan, 1);
+      grid-column: span var(--hspan, 1);
+      height: 100%;
+    }
+  }
+
+  /* 1. Add opacity transition */
+  transition: opacity 0.25s ease-in-out; 
+  opacity: 1;
+
+  /* 2. Style for tiles when they are transitioning out */
+  &.fade-out {
+    opacity: 0 !important;
+  }
+}
+
+
+
+/* 4. Sub-Element Layout Configurations */
+.review-tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+
+  .review-author {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+  }
+
+  .review-rating {
+    display: flex;
+    gap: 2px;
+
+    .star-icon {
+      fill: #e2e8f0; // Unfilled star state
+
+      &.filled {
+        fill: #ffb703; // Golden star accent
+      }
+    }
+  }
+}
+
+.review-tile-body {
+  @extend .scroll; // Reuses layout scroll framework configurations
+  flex-grow: 1;
+  margin-bottom: 0.5rem;
+
+  .review-comment {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0;
+    white-space: pre-line; // Preserves structure layouts delivered via YAML content
+  }
+}
+
+.review-tile-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 0.5rem;
+
+  .review-watermark {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: 500;
+
+    .google-icon {
+      display: block;
+    }
+  }
+}
+
+/* Image Elements Frameworks */
+.review-image-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @extend .scroll;
+
+  .review-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; // Scales to elegantly fill the calculated dimension matrixes
+    display: block;
+    transition: transform 0.3s ease;
+  }
+}
+
+.review-tile[data-type="image"]:hover {
+  .review-image {
+    transform: scale(1.03); // Delicate visual focus trigger on parent hover profiles
+  }
+}
+
+/* 5. Pagination Framework Controls */
+.reviews-controls {
+  display: flex; // Managed via layout engine calculations based on device capabilities
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.25rem 0;
+  flex-shrink: 0;
+
+  .control-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+    padding: 0;
+
+    svg {
+      fill: #1a1a1a;
+      transition: fill 0.2s ease;
+    }
+
+    &:hover:not(:disabled) {
+      background: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  .control-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .dot-btn {
+      background: #cbd5e1;
+      border: none;
+      border-radius: 10px;
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background: #94a3b8;
+      }
+
+      &.active {
+        background: #1a1a1a;
+        width: 24px; // Expands to dynamically mirror active pagination footprints
+      }
+    }
+  }
+}
+
+/* 6. Footer Layout Call To Action Elements */
+.reviews-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  flex-shrink: 0;
+
+  .btn-more-reviews {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      background: #333333;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);
+    }
+  }
+}
