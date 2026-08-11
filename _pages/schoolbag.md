@@ -1,3 +1,4 @@
+<img width="1083" height="391" alt="收費" src="https://github.com/user-attachments/assets/1f5973dd-4f8e-479a-8bf6-68dcaa7c0b52" />
 ---
 permalink: /schoolbag/
 toc: true
@@ -346,6 +347,7 @@ gcards:
 
 ## 首診方案
 「兒童體態全面評估（60分鐘）」：包括脊椎側彎篩查、足弓檢查、書包評估和負重測試。
+<img width="1083" height="391" alt="收費" src="https://github.com/user-attachments/assets/bd587593-b366-4c7b-843e-44fa76fd378d" />
 
 歡迎使用下方的互動區進行簡單的篩查。
 
