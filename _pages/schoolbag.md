@@ -1,4 +1,3 @@
-<img width="1083" height="391" alt="收費" src="https://github.com/user-attachments/assets/1f5973dd-4f8e-479a-8bf6-68dcaa7c0b52" />
 ---
 permalink: /schoolbag/
 toc: true
