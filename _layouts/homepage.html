@@ -11,10 +11,15 @@ layout: default
 
     <section class="page__content" itemprop="text">
 
-      <!-- Cover Banner -->
-      <section class="grid" style="--vsize:1;--hsize:1">
-        <div class="hero-grid-tile" style="
-          {% include custom/responsive_image_style bg_src="/assets/images/banner/home-2048.webp" bg_src_md="/assets/images/banner/home-1024.webp" %}"></div>
+      <!-- Reviews -->
+      <section id="reviews" style="justify-content: center; display: flex; background-color: #DCDCDC; padding: 10px;">
+        {% include custom/reviews_grid.html
+          hsize=4
+          vsize=20
+          google_business_profile_link="https://www.google.com/search?si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_2o7iYTc9Me1aWg-9I-VBbGURNcGlX0pbICrVVn0yf0V7l1LH1ibzOgs5Vr3ov5lugGCR-YAePCLV1cYPQoVJHWj1ZGC1r4sNkHAuWi1DL9Lmh0iTRAdRIcQUgwLGrw2nXgYlCg7W4iUU1rxoExitXaSfiPfqgooBA1qnwWYfTXHfVoaww7B8GJfOR9DrvELSBEBUqE%3D&ictx=1"
+          sorting="as_listed"
+          packed=false
+        %}
       </section>
       <!-- Connect on WhatsApp -->
       <section class="grid" style="--vsize:1;--hsize:1">
@@ -91,15 +96,6 @@ layout: default
         </div>
       </section>
 
-      <section id="reviews" style="justify-content: center; display: flex; background-color: #DCDCDC; padding: 10px;">
-        {% include custom/reviews_grid.html
-          hsize=4
-          vsize=20
-          google_business_profile_link="https://www.google.com/search?si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_2o7iYTc9Me1aWg-9I-VBbGURNcGlX0pbICrVVn0yf0V7l1LH1ibzOgs5Vr3ov5lugGCR-YAePCLV1cYPQoVJHWj1ZGC1r4sNkHAuWi1DL9Lmh0iTRAdRIcQUgwLGrw2nXgYlCg7W4iUU1rxoExitXaSfiPfqgooBA1qnwWYfTXHfVoaww7B8GJfOR9DrvELSBEBUqE%3D&ictx=1"
-          sorting="as_listed"
-          packed=false
-        %}
-      </section>
 
       <!-- Menu Mirror -->
       <section id="menu-mirror" class="grid-container">
