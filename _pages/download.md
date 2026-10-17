@@ -14,4 +14,4 @@ title: "下載區 | 一對一專業問診、臨床評估與針對性治療"
 description: "提供與物理治療相關的檔案下載。我們位於尖沙咀地鐵站旁，立即致電或 WhatsApp +852 6357 8708 預約諮詢。"
 ---
 
-{% include custom/download_table.html items=site.data.mark.download.download_area %}
+{% include custom/download_table.html items=site.data.mark.download %}
