@@ -1,26 +1,28 @@
-<table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-  {% for item in site.data.mark.fees %}
-    {% if item.sub_items %}
-      <!-- AUTOMATED ROWSPAN: Counts how many sub-items are present -->
-      {% for sub in item.sub_items %}
+<div class="therapy-grid-tile" style="padding:10px">
+  <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+    {% for item in site.data.mark.fees %}
+      {% if item.sub_items %}
+        <!-- AUTOMATED ROWSPAN: Counts how many sub-items are present -->
+        {% for sub in item.sub_items %}
+          <tr>
+            {% if forloop.first %}
+              <td rowspan="{{ item.sub_items.size }}" style="font-weight: bold; padding: 10px; vertical-align: middle;">
+                {{ item.name }}
+              </td>
+            {% endif %}
+            <td style="padding: 10px;">{{ sub.label }}</td>
+            <td style="padding: 10px; text-align: right;">{{ sub.price }}</td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <!-- AUTOMATED COLSPAN: Forces 2 columns for items without sub-items -->
         <tr>
-          {% if forloop.first %}
-            <td rowspan="{{ item.sub_items.size }}" style="font-weight: bold; padding: 10px; vertical-align: middle;">
-              {{ item.name }}
-            </td>
-          {% endif %}
-          <td style="padding: 10px;">{{ sub.label }}</td>
-          <td style="padding: 10px; text-align: right;">{{ sub.price }}</td>
+          <td colspan="2" style="padding: 10px; font-weight: bold;">
+            {{ item.name }}
+          </td>
+          <td style="padding: 10px; text-align: right;">{{ item.price }}</td>
         </tr>
-      {% endfor %}
-    {% else %}
-      <!-- AUTOMATED COLSPAN: Forces 2 columns for items without sub-items -->
-      <tr>
-        <td colspan="2" style="padding: 10px; font-weight: bold;">
-          {{ item.name }}
-        </td>
-        <td style="padding: 10px; text-align: right;">{{ item.price }}</td>
-      </tr>
-    {% endif %}
-  {% endfor %}
-</table>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
