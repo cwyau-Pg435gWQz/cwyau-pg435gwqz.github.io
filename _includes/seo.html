@@ -137,6 +137,24 @@
       {% include json_ld/website_website.json %},
       {% include json_ld/website_breadcrumblist.json %},
       {% include json_ld/website_webpage.json %}
+      {% if page.add_faq_json_ld == true %}
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {% for item in site.data.faq.faq %}
+            {
+              "@type": "Question",
+              "name": {{ item.q | jsonify }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ item.a | strip_newlines | jsonify }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+      {% endif %}
     ]
   }
 </script>

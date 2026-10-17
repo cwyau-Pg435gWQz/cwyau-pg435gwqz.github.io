@@ -1,5 +1,6 @@
 ---
 permalink: /faq/
+add_faq_json_ld: true
 toc: true
 toc_sticky: true
 search: true
