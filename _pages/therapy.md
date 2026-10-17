@@ -72,29 +72,7 @@ gcards:
 
 # 收費詳情
 
-<div class="therapy-grid-tile" style="padding:10px">
-  <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-    <tr>
-      <td rowspan="2" style="font-weight: bold; padding: 10px; vertical-align: middle;">
-        物理治療收費 
-      </td>
-      <td style="padding: 10px;">初診全面評估（ 包含診斷與首次治療）</td>
-      <td style="padding: 10px; text-align: right;">$500</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px;">後續單次治療</td>
-      <td style="padding: 10px; text-align: right;">$500</td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 10px; font-weight: bold;">度身訂造鞋墊</td>
-      <td style="padding: 10px; text-align: right;">$1400</td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 10px; font-weight: bold;">一對一上門物理治療</td>
-      <td style="padding: 10px; text-align: right;">歡迎查詢</td>
-    </tr>
-  </table>
-</div>
+{% include custom/fees_table.html %}
 
 <p></p>
 
