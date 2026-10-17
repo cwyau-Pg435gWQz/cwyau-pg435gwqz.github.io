@@ -48,6 +48,11 @@ layout: default
             </nav>
           </aside>
         {% endif %}
+
+        {% if page.show_fees_table %}
+          {% include custom/fees_table.html %}
+        {% endif %}
+
         {{ content }}
 
         {% if page.invite_feedback %}
