@@ -10,6 +10,7 @@
                               'text-first'}. (default: 'as_listed')
     @param {boolean} packed - If true, latter image is moved forward to fill
                               empty space. (default: false)
+    @param {string} reviews_data - Path to the reviews data.
 
   =============================================================================
   FRONT MATTER DEFINITION
@@ -30,7 +31,7 @@
   =============================================================================
 {% endcomment %}
 
-{%- assign reviews_data = site.data.mark.reviews -%}
+{%- assign reviews_data = include.reviews_data -%}
 {%- assign hsize = include.hsize | default: 4 -%}
 {%- assign vsize = include.vsize | default: 20 -%}
 {%- assign sorting = include.sorting | default: "as_listed" -%}
