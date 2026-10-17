@@ -53,6 +53,14 @@ layout: default
           {% include custom/fees_table.html %}
         {% endif %}
 
+        {% include custom/reviews_grid.html
+          hsize=2
+          vsize=20
+          sorting="as_listed"
+          packed=false
+          reviews_data=page.reviews
+        %}
+
         {{ content }}
 
         {% if page.invite_feedback %}
