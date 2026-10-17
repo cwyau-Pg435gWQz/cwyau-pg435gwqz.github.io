@@ -6,8 +6,6 @@
   Input:
     @param {number} hsize - Number of horizontal units (default: 4)
     @param {number} vsize - Number of vertical units (default: 20)
-    @param {string} google_business_profile_link - For the "More Reviews"
-                                                   button
     @param {string} sorting - One of {'as_listed', 'random', 'image-first',
                               'text-first'}. (default: 'as_listed')
     @param {boolean} packed - If true, latter image is moved forward to fill
@@ -38,7 +36,7 @@
 {%- assign sorting = include.sorting | default: "as_listed" -%}
 {%- assign packed = include.packed | default: false -%}
 {%- assign slider_mode = include.slider_mode | default: true -%}
-{%- assign google_link = include.google_business_profile_link | default: "#" -%}
+{%- assign google_link = site.google_business_profile_link | default: "#" -%}
 
 <section class="reviews-section {% if slider_mode %}fit-to-page{% endif %}"
          id="bento-reviews-root"
@@ -99,7 +97,7 @@
             <!-- Image Review Content -->
             <div class="review-image-container">
               <img class="review-image"
-                   src="assets/reviews/{{ review.image_file_name }}"
+                   src="/assets/reviews/{{ review.image_file_name }}"
                    alt="{{ review.seo_text | escape }}"
                    aria-label="{{ review.seo_text | escape }}"
                    loading="lazy">
