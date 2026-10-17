@@ -32,7 +32,7 @@
   =============================================================================
 {% endcomment %}
 
-{%- assign reviews_data = site.data.content.reviews -%}
+{%- assign reviews_data = site.data.mark.reviews.reviews -%}
 {%- assign hsize = include.hsize | default: 4 -%}
 {%- assign vsize = include.vsize | default: 20 -%}
 {%- assign sorting = include.sorting | default: "as_listed" -%}

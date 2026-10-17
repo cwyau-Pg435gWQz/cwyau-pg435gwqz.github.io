@@ -1,0 +1,12 @@
+# Configure the downloadable items shown on the 下載區 page, ordered as listed.
+download_area:
+  # Example:
+  # - name: "烏龜頸筆記"
+  #   file: "烏龜頸筆記.pdf"
+  # Explanation:
+  #   Provides `name` for the display name and `file` for the name of the file
+  #   located in /assets/download
+  - name: "烏龜頸筆記"
+    file: "烏龜頸筆記.pdf"
+  - name: "完美體態講座筆記"
+    file: "完美體態講座筆記.pdf"
