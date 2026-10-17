@@ -1,0 +1,67 @@
+name: Generate FAQ JSON-LD
+
+on:
+  push:
+    paths:
+      - '_data/faq.yml' # Triggers only when your FAQ file changes
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Crucial for pushing changes back to the repo
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-state: '3.x'
+
+    - name: Install dependencies
+      run: pip install pyyaml
+
+    - name: Generate JSON-LD File
+      run: |
+        python -c '
+        import yaml
+        import json
+        import os
+
+        # Open and load the Jekyll data file
+        with open("_data/faq.yml", "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+
+        faq_items = data.get("faq", [])
+
+        # Structure according to schema.org FAQPage rules
+        json_ld = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": []
+        }
+
+        for item in faq_items:
+            json_ld["mainEntity"].append({
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["a"]
+                }
+            })
+
+        # Ensure directory exists and save file
+        os.makedirs("_includes/json_ld", exist_ok=True)
+        with open("_includes/json_ld/faq.json", "w", encoding="utf-8") as f:
+            json.dump(json_ld, f, ensure_ascii=False, indent=2)
+        '
+
+    - name: Commit and Push Changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "automated: update _includes/json_ld/faq.json [skip ci]"
+        file_pattern: '_includes/json_ld/faq.json'
