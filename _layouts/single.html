@@ -49,6 +49,12 @@ layout: default
           </aside>
         {% endif %}
 
+        {{ content }}
+
+        {% if page.invite_feedback %}
+          {{ page.invite_feedback | markdownify}}
+        {% endif %}
+
         {% if page.show_fees_table %}
           {% include custom/fees_table.html %}
         {% endif %}
@@ -63,11 +69,6 @@ layout: default
           %}
         {% endif %}
 
-        {{ content }}
-
-        {% if page.invite_feedback %}
-          {{ page.invite_feedback | markdownify}}
-        {% endif %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
