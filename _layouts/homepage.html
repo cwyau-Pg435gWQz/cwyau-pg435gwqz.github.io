@@ -10,40 +10,6 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <section class="page__content" itemprop="text">
-
-      <!-- Reviews -->
-      <section id="reviews" style="justify-content: center; display: flex; background-color: #DCDCDC; padding: 10px;">
-        {% include custom/reviews_grid.html
-          hsize=4
-          vsize=20
-          sorting="as_listed"
-          packed=false
-          reviews_data=site.data.mark.reviews
-        %}
-      </section>
-      <!-- Connect on WhatsApp -->
-      <section class="grid" style="--vsize:1;--hsize:1">
-        <div class="message-grid-tile homepage-bg-pattern-web" style="color:white;">
-          <div class="content">
-            <div class='first-line'>一對一骨骼肌肉評估</div>
-            <div class='line'>結合實證醫學治療</div>
-            <div class='line'>修復您的疼痛根源</div>
-            <div class='line'>尖沙咀 N2 出口步行 1 分鐘</div>
-            <div class='line'>專治上班族腰頸偏頭痛和</div>
-            <div class='line'>學童脊椎足部發展</div>
-            <div class="line btn btn--light-outline btn--large" style="font-size:1em; display:block">
-              {% include custom/ext_link url="https://calendly.com/mark20002000/30min" text="預約物理治療" %}
-            </div>
-            <div class="line btn btn--light-outline btn--large" style="font-size:1em; display:block">
-              {% include custom/ext_link url="https://wa.me/63578708" text="WhatsApp 查詢" %}
-            </div>
-          </div>
-          <div class="image qr_code" style="max-width:150px;">
-            {% include custom/ext_link url="https://wa.me/63578708" img="/assets/images/qr_code/qr_whatsapp.webp" text="WhatsApp 查詢" %}
-          </div>
-        </div>
-      </section>
-
       <!-- News + Latest Articles + Latest YouTube -->
       <section id="latest" class="bento-grid-container homepage-bg-pattern-shapes" style="padding: 10px;">
         <div class="bento-grid" style="--vsize:3;--hsize:4">
@@ -95,6 +61,41 @@ layout: default
 
         </div>
       </section>
+
+      <!-- Connect on WhatsApp -->
+      <section class="grid" style="--vsize:1;--hsize:1">
+        <div class="message-grid-tile homepage-bg-pattern-web" style="color:white;">
+          <div class="content">
+            <div class='first-line'>一對一骨骼肌肉評估</div>
+            <div class='line'>結合實證醫學治療</div>
+            <div class='line'>修復您的疼痛根源</div>
+            <div class='line'>尖沙咀 N2 出口步行 1 分鐘</div>
+            <div class='line'>專治上班族腰頸偏頭痛和</div>
+            <div class='line'>學童脊椎足部發展</div>
+            <div class="line btn btn--light-outline btn--large" style="font-size:1em; display:block">
+              {% include custom/ext_link url="https://calendly.com/mark20002000/30min" text="預約物理治療" %}
+            </div>
+            <div class="line btn btn--light-outline btn--large" style="font-size:1em; display:block">
+              {% include custom/ext_link url="https://wa.me/63578708" text="WhatsApp 查詢" %}
+            </div>
+          </div>
+          <div class="image qr_code" style="max-width:150px;">
+            {% include custom/ext_link url="https://wa.me/63578708" img="/assets/images/qr_code/qr_whatsapp.webp" text="WhatsApp 查詢" %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section id="reviews" style="justify-content: center; display: flex; background-color: #DCDCDC; padding: 10px;">
+        {% include custom/reviews_grid.html
+          hsize=4
+          vsize=20
+          sorting="as_listed"
+          packed=false
+          reviews_data=site.data.mark.reviews
+        %}
+      </section>
+
 
 
       <!-- Menu Mirror -->
