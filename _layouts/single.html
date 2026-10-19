@@ -56,17 +56,15 @@ layout: default
         {% endif %}
 
         {% if page.show_fees_table %}
-          {% include custom/fees_table.html %}
+          {% unless content contains site.data.marker.fees_table %}
+            {% include custom/blog_tools.html tool='fees_table' %}
+          {% endunless %}
         {% endif %}
 
-        {% if page.show_review_grid and page.reviews.size > 0 %}
-          {% include custom/reviews_grid.html
-            hsize=2
-            vsize=20
-            sorting="as_listed"
-            packed=false
-            reviews_data=page.reviews
-          %}
+        {% if page.show_reviews_grid %}
+          {% unless content contains site.data.marker.reviews_grid %}
+            {% include custom/blog_tools.html tool='reviews_grid' %}
+          {% endunless %}
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
