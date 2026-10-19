@@ -43,3 +43,7 @@
 {% if page.url == "/" or page.url contains "/blog/" %}
   {% include custom/js src="/assets/js/custom/lite-yt.js" %}
 {% endif %}
+
+{% if content contains site.data.marker.form %}
+  {% include custom/js src="/assets/js/custom/form.js" %}
+{% endif %}

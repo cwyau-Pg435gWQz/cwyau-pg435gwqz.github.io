@@ -1,0 +1,63 @@
+{% comment %}
+  Flip a flag on the page object to notify the layout
+  that a form element has been added.
+{% endcomment %}
+
+{% comment %}
+  Initialize global counter variables if they do not exist
+{% endcomment %}
+{% unless site.form_checkbox_counter %}
+  {% assign site.form_checkbox_counter = 0 %}
+{% endunless %}
+{% unless site.form_decimalbox_counter %}
+  {% assign site.form_decimalbox_counter = 0 %}
+{% endunless %}
+
+{{ site.data.marker.form }}
+
+{% if include.object == "checkbox" %}
+  {% assign site.form_checkbox_counter = site.form_checkbox_counter | plus: 1 %}
+  {% capture default_id %}chk-{{ site.form_checkbox_counter }}{% endcapture %}
+  {% assign target_id = include.id | default: default_id %}
+
+  <div class="form-checkbox-wrapper" style="margin-bottom: 0.5rem;">
+    <input
+      type="checkbox"
+      id="{{ target_id }}"
+      {% if include.group %}data-group="{{ include.group }}"{% endif %}
+      class="form-engine-checkbox"
+      {% if include.default_checked == true or include.default_checked == "true" %}checked{% endif %}
+    >
+    <label for="{{ target_id }}" style="display:inline">{{ include.label }}</label>
+  </div>
+
+{% elsif include.object == "decimalbox" %}
+  {% assign site.form_decimalbox_counter = site.form_decimalbox_counter | plus: 1 %}
+  {% capture default_id %}dec{{ site.form_decimalbox_counter }}{% endcapture %}
+  {% assign target_id = include.id | default: default_id %}
+
+  <div class="form-decimalbox-wrapper" style="margin-bottom: 0.5rem;">
+    {% if include.label %}<label for="{{ include.id }}">{{ include.label }}</label>{% endif %}
+    <input
+      type="number"
+      step="any"
+      id="{{ target_id }}"
+      {% if include.group %}data-group="{{ include.group }}"{% endif %}
+      class="form-engine-decimalbox"
+      style="{% if include.size %}width: {{ include.size }}ch;{% endif %}"
+      {% if include.default_value %}placeholder="{{ include.default_value }}"{% endif %}
+      {% if include.max_length %}maxlength="{{ include.max_length }}"{% endif %}
+    >
+  </div>
+
+{% elsif include.object == "result_start" %}
+  <div
+    class="form-engine-result-block"
+    data-rule="{{ include.rule | escape }}"
+    {% if include.id %}id="{{ include.id }}"{% endif %}
+    style="display: none;"
+  >
+
+{% elsif include.object == "result_end" %}
+  </div>
+{% endif %}
