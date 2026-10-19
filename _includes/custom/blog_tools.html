@@ -1,8 +1,6 @@
 {% assign tool = include.tool %}
 
-
 {% if tool == 'fees_table' %}
-  {{ site.data.marker.fees_table }}
   {% include custom/fees_table.html %}
 
 {% elsif tool == 'reviews_grid' %}
@@ -12,7 +10,6 @@
     {% assign selected_reviews = site.data.mark.reviews %}
   {% endif %}
 
-  {{ site.data.marker.reviews_grid }}
   {% include custom/reviews_grid.html
     hsize=2
     vsize=20
@@ -20,5 +17,8 @@
     packed=false
     reviews_data=selected_reviews
   %}
+
+{% elsif tool == 'form' %}
+  {{ site.data.marker.form }}
 
 {% endif %}

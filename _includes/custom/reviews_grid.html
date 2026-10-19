@@ -39,6 +39,8 @@
 {%- assign slider_mode = include.slider_mode | default: true -%}
 {%- assign google_link = site.google_business_profile_link | default: "#" -%}
 
+{{ site.data.marker.reviews_grid }}
+
 <section class="reviews-section {% if slider_mode %}fit-to-page{% endif %}"
          id="bento-reviews-root"
          data-hsize="{{ hsize }}"
