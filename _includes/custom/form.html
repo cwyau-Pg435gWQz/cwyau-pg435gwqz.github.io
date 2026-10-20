@@ -37,7 +37,7 @@
   {% assign target_id = include.id | default: default_id %}
 
   <div class="form-decimalbox-wrapper" style="margin-bottom: 0.5rem;">
-    {% if include.label %}<label for="{{ include.id }}">{{ include.label }}</label>{% endif %}
+    {% if include.label %}<label for="{{ include.id }}" style="display: inline;">{{ include.label }}</label>{% endif %}
     <input
       type="number"
       step="any"
@@ -46,7 +46,6 @@
       class="form-engine-decimalbox"
       style="{% if include.size %}width: {{ include.size }}ch;{% endif %}"
       {% if include.default_value %}placeholder="{{ include.default_value }}"{% endif %}
-      {% if include.max_length %}maxlength="{{ include.max_length }}"{% endif %}
     >
   </div>
 
