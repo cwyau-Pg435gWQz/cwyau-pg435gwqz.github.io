@@ -6,9 +6,9 @@
 - name: "物理治療收費"
   sub_items:
     - label: "初診全面評估（ 包含診斷與首次治療）"
-      price: "$500"
+      price: "<del>$1080</del> $500"
     - label: "後續單次治療"
-      price: "$500"
+      price: "<del>$1080</del> $500"
 
 - name: "度身訂造鞋墊"
   price: "$1400"
