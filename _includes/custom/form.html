@@ -1,4 +1,32 @@
 {% comment %}
+  FORM ENGINE ELEMENTS COMPONENT
+  Author: Raymond Kwok
+  Description: Renders dynamic HTML form elements (checkboxes, decimal inputs, and result containers)
+  and tracks global instance counters.
+  Input:
+    @param {string} object - [REQUIRED] One of {'checkbox', 'decimalbox', 'result_start', 'result_end'}.
+    @param {string} id - The explicit unique HTML ID. (default: auto-incremented fallback string)
+    @param {string} group - Groups elements together via data-group tags.
+    @param {string} label - Text display string tied directly to the input's label element.
+    @param {boolean|string} default_checked - Pre-checks the input field. For object = 'checkbox' only. (default: false)
+    @param {string} size - Character count length defining inline input width. For object = 'decimalbox' only.
+    @param {string} default_value - Numerical placeholder indicator text. For object = 'decimalbox' only.
+    @param {string} rule - Escaped logical rule validation query attribute. For object = 'result_start' only.
+
+  =============================================================================
+  FRONT MATTER DEFINITION
+  -----------------------------------------------------------------------------
+  @description
+  This file depends on a preconfigured system variable layout (`site.data.marker.form`)
+  and initializes internal site counters (`site.form_checkbox_counter`, `site.form_decimalbox_counter`)
+  automatically to structure pages cleanly.
+
+  =============================================================================
+{% endcomment %}
+
+
+
+{% comment %}
   Flip a flag on the page object to notify the layout
   that a form element has been added.
 {% endcomment %}
