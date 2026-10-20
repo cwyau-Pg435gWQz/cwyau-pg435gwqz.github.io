@@ -160,6 +160,72 @@ Source: https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/ */
 }
 
 /* --------------------
+   Syntax
+   -------------------- */
+.syntax-code {
+  margin: 0;
+  background: #f6f8fa;
+  padding: 8px;
+  border-radius: 3px;
+  font-family: monospace;
+  border: 1px solid #eaecef;
+  overflow-x: auto;
+  white-space: pre;
+  word-break: normal;
+  display: block;
+  max-width: 100%;
+}
+
+.syntax-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  table-layout: fixed;
+}
+
+.syntax-header {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.syntax-col-name {
+  width: 25%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.syntax-col-code {
+  width: 30%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  max-width: 100px;
+}
+
+.syntax-col-explain{
+  width: 45%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  text-align: left;
+}
+
+
+/* --------------------
+   text-copy-button
+   -------------------- */
+
+.copy-code-button{
+  color: #0366d6;
+  cursor: pointer;
+  font-size: 0.85em;
+  user-select: none;
+}
+
+
+/* --------------------
    Site-wide
    -------------------- */
 

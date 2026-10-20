@@ -50,6 +50,8 @@ en: &DEFAULT_EN
   search_algolia_no_results  : "No results"
   results_found              : "Result(s) found"
   back_to_top                : "Back to top"
+  copy_code_button           : "Copy Code"
+  copy_code_button_success   : "Copy Code Success!"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -476,6 +478,8 @@ zh-TW: &DEFAULT_ZH_HANT
   search_algolia_no_results  : "找不到結果"
   results_found              : "個匹配結果"
   back_to_top                : "回到頁首"
+  copy_code_button           : "點此複製代碼"
+  copy_code_button_success   : "複製代碼成功！"
 zh-HK:
   <<: *DEFAULT_ZH_HANT
 

@@ -47,3 +47,7 @@
 {% if content contains site.data.marker.form %}
   {% include custom/js src="/assets/js/custom/form.js" %}
 {% endif %}
+
+{% if content contains site.data.marker.copy_code_button %}
+  {% include custom/js src="/assets/js/custom/copy_code_button.js" %}
+{% endif %}
